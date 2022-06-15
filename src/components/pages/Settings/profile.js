@@ -31,10 +31,10 @@ const Profile = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [about, setAbout] = useState();
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  const { data: getUserProfile } = useUserMeProfileRetrieve({});
-  const { mutate: updateUserProfile } = useUserMeProfilePartialUpdate({})
+  const { data: getUserProfile, loading: isLoading } = useUserMeProfileRetrieve({});
+  const { mutate: updateUserProfile, loading } = useUserMeProfilePartialUpdate({})
 
 
   useEffect(() => {
@@ -43,7 +43,6 @@ const Profile = () => {
     setAbout(getUserProfile?.about)
     setAvatarFile(getUserProfile?.avatar)
     setProfileType(getUserProfile?.user_type)
-    setLoading(false)
   }, [getUserProfile])
 
 
@@ -97,7 +96,7 @@ const Profile = () => {
         :  */}
       <>
         <h5>Profil</h5>
-        <div className="settings pt-4">
+        {isLoading ? <span style={{display:"flex", justifyContent:"center"}}><Spinner /></span> : <div className="settings pt-4">
           <label htmlFor="Vorname">Vorname</label>
           <input
             type="text"
@@ -196,10 +195,10 @@ const Profile = () => {
             </button>
           </div>
 
-          {loading ? <Spinner /> : <button onClick={() => formSubmit()} className="btn btn-primary px-4 py-2 text-white mb-2 speichernButton">
-            Speichern
-          </button>}
-        </div>
+          <button onClick={() => formSubmit()} className="btn btn-primary px-4 py-2 text-white mb-2 speichernButton">
+            {loading ? <Spinner /> : "Speichern"}
+          </button>
+        </div>}
       </>
       {/* } */}
     </Fragment>

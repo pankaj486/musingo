@@ -39,6 +39,8 @@ import TestBookingTimePickerNew from "./testBookingTimePickerNew";
 import ModeOne from '../../../assets/images/modeOne.png'
 import ModeTwo from '../../../assets/images/modeTwo.png'
 import {useExperienceRetrieve} from "src/generated/apiFetchers";
+import { useUserMeProfileRetrieve } from "src/generated/apiFetchers"
+
 
 
 const Booking = (props) => {
@@ -50,6 +52,8 @@ const Booking = (props) => {
     const location = useLocation();
 
     const {data: getSingleUserExperience} = useExperienceRetrieve(location.state)
+
+    const {data: getUserMeProfile} = useUserMeProfileRetrieve({});
 
     const { dimensions } = useWindowResize();
     const width = dimensions.width;
@@ -459,11 +463,11 @@ const Booking = (props) => {
                                                 deiner Buchungsanfrage direkt mit dem TRAINERNAME chatten</p>
                                             <div className="booking-verified-trainer">
                                                 <div className="booking-verified-trainer__img-container">
-                                                    <img className="booking-verified-trainer__img" src={TrainerImage}
+                                                    <img className="booking-verified-trainer__img" src={getUserMeProfile?.avatar}
                                                         alt="booking-verified-trainer" />
                                                 </div>
                                                 <div className="booking-verified-trainer__trainer-name-container">
-                                                    <p className="booking-verified-container__trainer-name">Dimi</p>
+                                                    <p className="booking-verified-container__trainer-name">{getUserMeProfile?.first_name}</p>
                                                     <div className="booking-verified-trainer__verified-logo-container">
                                                         <img className="booking-verified-trainer__verified-logo" src={Checked}
                                                             alt="verified logo" />
