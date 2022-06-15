@@ -1,0 +1,43 @@
+{
+	"name": "Musingoo Frontend",
+	"description": "The Web App for the Musingoo marketplace",
+	"keywords": [
+		"react",
+		"create-react-app",
+		"frontend",
+		"musingoo"
+	],
+	"formation": {
+		"web": {
+			"quantity": 1,
+			"size": "hobby"
+		}
+	},
+	"buildpacks": [
+		{
+			"url": "https://github.com/mars/create-react-app-buildpack.git"
+		}
+	],
+	"env": {
+		"REACT_APP_API_URL": "https://api-integration-staging.herokuapp.com",
+		"REACT_APP_BUILDER_API_KEY": {
+			"required": true
+		}
+	},
+	"environments": {
+		"review": {
+			"env": {
+				"REACT_APP_API_URL": "https://api-integration-staging.herokuapp.com",
+				"REACT_APP_BUILDER_API_KEY": {
+					"required": true
+				}
+			}
+		},
+		"test": {
+			"scripts": {
+				"test-setup": "npm install --dev",
+				"test": "npm run test:non-pact && npm run test:pact"
+			}
+		}
+	}
+}

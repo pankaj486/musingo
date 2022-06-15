@@ -1,0 +1,109 @@
+.wrap-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .mid {
+    position: absolute;
+    z-index: 99999;
+    top: 20%;
+    @media screen and (max-width: 767px) {
+      top:10%
+    }
+    h1 {
+      font-size: 60px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0;
+      padding: 10px;
+      @media screen and (max-width: 767px) {
+         font-size: 20px;
+       }
+    }
+    h2 {
+      font-size: 60px;
+      color: white;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 0;
+      padding: 10px 30px;
+      @media screen and (max-width: 767px) {
+         font-size: 20px;
+       }
+    }
+    p {
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0;
+      padding: 10px;
+      @media screen and (max-width: 767px) {
+         font-size: 14px;
+       }
+    }
+    h3 {
+      font-size: 30px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0;
+      padding: 10px;
+      margin-top: 100px;
+      @media screen and (max-width: 767px) {
+         font-size: 16px;
+         margin-top: 30px;
+       }
+    }
+  
+    input {
+      background-color: white;
+      width: 45%;
+      height: 50px;
+      border-radius: 30px;
+      outline: none;
+      border: none;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .btn {
+      background-color: rgb(252, 93, 104);
+      width: 45%;
+      height: 50px;
+      border-radius: 30px;
+      outline: none;
+      border: none;
+      padding: 0 20px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
+.countBox.left {
+  display: flex !important;
+  flex-direction: row-reverse;
+}
+.countBoxItem {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  margin: 0 23px !important;
+}
+.label,
+.split {
+  color: white !important;
+  text-align: center !important;
+}
+
+.parent-element-to-video {
+  overflow: hidden;
+}
+video {
+  height: 90%;
+  object-fit: cover;
+  // width: 177.77777778vh; /* 100 * 16 / 9 */
+  min-width: 100%;
+  // min-height: 56.25vw; /* 100 * 9 / 16 */
+}

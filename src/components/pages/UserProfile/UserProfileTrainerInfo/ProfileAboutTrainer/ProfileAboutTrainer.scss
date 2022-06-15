@@ -1,0 +1,35 @@
+.profile-about-trainer {
+  width: 30%;
+}
+
+.about-trainer__title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.about-trainer__details {
+  margin-bottom: 0;
+  margin-top: 32px;
+  font-size: 14px;
+}
+
+.trainer-profile-edit-about-me {
+  width: 377px;
+  min-width: 377px;
+  height: 120px;
+  min-height: 120px;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 0;
+  margin-top: 32px;
+  font-size: 14px;
+}
+
+.trainer-profile-edit-about-me::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+.trainer-profile-edit-about-me::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}

@@ -1,0 +1,14 @@
+.userAvatarGroupItem{
+    margin-right: -10px;
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.userAvatarGroupItemCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.userAvatarGroupItemCounterText {
+    font-weight: 600;
+}

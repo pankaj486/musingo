@@ -1,0 +1,45 @@
+.controlPanelBox {
+    padding-left: 30px; 
+    padding-right: 30px; 
+}
+.controlPanelBoxLeft,
+.controlPanelBoxRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.controlPanelBoxFooter {
+    margin-top: 30px;
+}
+.controlPanelBoxFooterBtn {
+    width: 100%;
+    color: #fff !important;
+    padding: 15px !important;
+    border-radius: 15px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+.controlPanelBoxFooterBtnBordered {
+    color: #484848 !important;
+    border-width: 2px !important;
+    border-color: #484848 !important;
+
+    &:hover {
+        color: #fff !important;
+        border-color: #4ad9ca !important;
+    }
+}
+
+.controlPanelBoxArrow {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.controlPanelBoxArrowImg {
+    height: 13px;
+    width: auto;
+    max-width: 100%;
+    opacity: 0.35;
+}

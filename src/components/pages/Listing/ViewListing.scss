@@ -1,0 +1,275 @@
+.headerButton {
+  position: absolute;
+  right: 1rem;
+  top: 6.5rem;
+  @media only screen and (max-width: 1024px) {
+    top: 1rem;
+  }
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #d6d4d4;
+}
+
+.fixedButton {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 1000;
+  border-top: 2px solid #f2f2f2;
+}
+.marker-color {
+  color: #929292;
+}
+.trianerBadge {
+  position: absolute;
+  bottom: -8px;
+  right: 1px;
+}
+
+.trianerIntroBadge {
+  position: absolute;
+  bottom: -8px;
+  right: 14px;
+}
+
+.flagButton {
+  position: absolute;
+  bottom: 15px;
+}
+
+.grayFlag {
+  font-size: 0.9rem !important;
+  color: #929292 !important;
+}
+
+.viewListingDetails {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewListingDetails > div {
+  min-width: 30%;
+  max-width: 30%;
+  height: 120px;
+  justify-content: flex-start;
+}
+
+.viewListingDetails > div:last-of-type {
+  min-width: 40%;
+  max-width: 40%;
+}
+
+.viewListingDetails > div p {
+  height: 67px;
+}
+.viewListingDetailsContainer {
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 600px) {
+  .viewListingDetails > div p {
+    font-size: 13px;
+  }
+
+  .viewListingDetailsContainer {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .viewListingDetailsContainer > p {
+    font-size: 14px;
+  }
+}
+
+.viewListingDetails.desktop-rows {
+  display: flex;
+  @media screen and (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.viewListingDetails.mobile-rows {
+  display: flex;
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+.viewListingDetails.mobile-rows > div {
+  min-width: 40%;
+  max-width: 40%;
+}
+
+.viewlisting-favourite-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  bottom: 30px;
+  left: 42px;
+  //cursor: pointer;
+}
+
+.viewlisting-favourite-container img {
+  width: 32px;
+  height: 32px;
+}
+
+.viewlisting-location-container {
+  position: absolute;
+  top: 30px;
+  right: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewlisting-location-container img {
+  width: 20px;
+  height: auto;
+  margin-right: 2px;
+}
+
+.viewlisting-location-container span {
+  font-weight: bold;
+  border: solid 1px 55ee5e;
+  color: #fff;
+  line-height: 1;
+  font-size: 14px !important;
+}
+
+.viewlisting-share-container {
+  position: absolute;
+  bottom: 30px;
+  right: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 80px;
+  height: 30px;
+  border-radius: 24px;
+}
+
+.viewlisting-share-container span {
+  color: #4ad9ca;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.viewlisting-instructor-mobile-container {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+}
+
+.viewlisting-instructor-mobile-container img {
+  margin-right: 10px;
+}
+
+.viewlisting-instructor-mobile-container span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+}
+
+.viewlisting-rating-mobile-container {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewlisting-rating-mobile-container i {
+  -webkit-text-stroke-width: 1px;
+}
+
+.viewlisting-mobile-header {
+  position: fixed;
+  height: 73px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.viewlisting-mobile-header__chevron-container img {
+  transform: rotate(90deg);
+  width: 28px;
+  position: absolute;
+  left: 35px;
+  top: 30px;
+  height: 28px;
+}
+.viewlisting-mobile-header__chevron-container2 img {
+  transform: rotate(90deg);
+  width: 28px;
+  position: absolute;
+  left: 55px;
+  top: 120px;
+  height: 28px;
+}
+
+.viewlisting-mobile-header__right-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewlisting-mobile-header__favourite {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border: 1px solid #bcbcbc;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.viewlisting-mobile-header__favourite img {
+  width: 40px;
+  height: 40px;
+}
+
+.viewlisting-mobile-header__teilen {
+  width: 75px;
+  height: 40px;
+  border: 1px solid #bcbcbc;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.viewlisting-mobile-header__teilen span {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 15px;
+  color: #4ad9ca;
+}
+
+html body .App .viewlisting-hobbymusiker {
+  border-color: #4ad9ca !important;
+}

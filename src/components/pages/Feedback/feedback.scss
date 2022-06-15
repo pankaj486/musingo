@@ -1,0 +1,23 @@
+.feedBackInfo {
+  position: fixed;
+  top: 100px;
+  right: 50px;
+  max-width: 220px;
+}
+
+.beliebt {
+  position: absolute;
+  top: -18px;
+  color: white;
+  background: #ffbe1e;
+  padding: 0.3rem 1.2rem;
+  border-radius: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+
+.priceBoxBorder {
+  border: 3px solid #d6d6d6 !important;
+  border-radius: 25px;
+}

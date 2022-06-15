@@ -1,0 +1,276 @@
+.filterBox {
+  position: absolute;
+  top: 2rem;
+  background: white;
+  padding: 1.5rem 1rem;
+  z-index: 100;
+  right: 0.5rem;
+  min-width: 12rem;
+  @media only screen and (max-width: 1024px) {
+    position: fixed;
+    top: 60%;
+    right: 0;
+    height: 80vh;
+    width: 90vw;
+    left: 50%;
+    bottom: 0;
+    margin-top: -45vh; /* Negative half of height. */
+    margin-left: -45vw;
+    border: 1px solid #dfdddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1040;
+    border-radius: 1rem;
+  }
+}
+
+.filterButton {
+  border-radius: 2rem !important;
+  padding: 0.5rem 1rem !important;
+  border: 2px solid #dfdddd !important;
+  font-weight: 700 !important;
+  color: rgb(112, 111, 111) !important;
+  font-size: 13px !important;
+  transition: border 0.25s;
+  &:hover {
+    background: white !important;
+    // border: 2px solid #4ad9ca !important;
+  }
+  @media only screen and (max-width: 1024px) {
+    padding: 0.5rem 2rem !important;
+  }
+}
+
+.filterActive {
+  border: 2px solid #4ad9ca !important;
+}
+
+.filterTypeContainer {
+  // position: fixed;
+  z-index: 4;
+  top: 70px;
+  background: white;
+  left: 0;
+  right: 0;
+  width: 100%;
+  // padding: 0 0 0 3.5rem;
+  @media only screen and (max-width: 1024px) {
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+  }
+}
+.rc-slider-mark {
+  top: -18px !important;
+}
+
+.filterModal {
+  background: white;
+  margin: 2rem 0px;
+  border-radius: 2rem;
+  border: 1px solid #f2f2f2;
+  width: 100% !important;
+  height: 90vh !important;
+  .content {
+    height: 70vh;
+    overflow: scroll;
+  }
+  .modal-content {
+    border: 1px solid #f2f2f2 !important;
+    .custom-control-label {
+      color: #5e5e5e;
+    }
+    .p {
+      color: #5e5e5e;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    max-height: 700px !important;
+    margin: 0px;
+    height: 1000vh !important;
+  }
+}
+
+.filterFixedButton {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 576px) {
+  .filterModal {
+    .modal-dialog {
+      max-width: 100% !important;
+    }
+    .modal-body {
+      // margin-top: 124px;
+    }
+  }
+}
+
+.filterOption {
+  border-radius: 35px;
+  min-width: 180px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4ad9ca;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4ad9ca;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.filterText {
+  padding: 1.1rem 0;
+  flex: 1;
+  text-align: center;
+}
+
+.midHeight {
+  height: 60vh !important;
+  margin-top: 15vh !important;
+}
+
+.appointment-filter-cta {
+  margin-top: 8px !important;
+}
+
+.close-filter-button {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 1051;
+}
+
+.close-filter-button img {
+  width: 21px;
+  height: 21px;
+}
+
+.filterBox {
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+}
+
+.filterBox:not(.terminzeiten) {
+  left: 0;
+}
+
+.filterBox .close-filter-button {
+  left: 16px;
+  top: 16px;
+}
+
+.filterBox.experienceArtFilter .filterOption {
+  max-width: 160px;
+  min-width: unset;
+}
+
+.activeFilter {
+  border: 2px solid #4ad9ca;
+}
+.moreFilteContainer {
+  .modal {
+    max-height: 40vh !important;
+  }
+}
+.moreFilter {
+  max-width: 800px !important;
+  background: white;
+  margin-top: 100px;
+  border-radius: 30px !important;
+  @media screen and (min-width: 768px) {
+    margin-top: 0px;
+  }
+  .modal-body {
+    height: 70vh;
+    border: 1px solid #f2f2f2;
+    border-radius: 2rem;
+    padding: 2rem 1rem !important;
+  }
+
+}
+
+.available-day__heading {
+  font-weight: 600;
+  text-align: center;
+  color: #131313;
+  margin-bottom: 5px;
+}
+
+.available-day__checkbox {
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  min-height: 16px;
+  border: 1px solid #bcbcbc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.available-day__checkbox.selected {
+  background: #4ad9ca;
+  border: 1px solid #4ad9ca;
+}

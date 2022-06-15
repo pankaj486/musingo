@@ -1,0 +1,98 @@
+.carousel-landing-page {
+    margin-top: 130px;
+    .carousel-image {
+        height: 460px;
+        width: 100%;
+        background-image: url("../../assets/images/image1.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 70px;
+        position: relative;
+        display: flex !important;
+        align-items: flex-end;
+        justify-content: center;
+        @media (max-width: 1440px) {
+            height: 420px;
+        }
+        .input2 {
+            border: 1px solid #797979;
+            width: 380px;
+            height: 70px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-align: center;
+            margin-bottom: 123px;
+            @media (max-width: 454px) {
+                font-size: 13px;
+                width: 200px;
+            }
+        }
+        .info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 20px;
+            right: 100px;
+            @media (max-width: 454px) {
+                right: -2px;
+            }
+            .avatar {
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+                border: 5px solid white;
+                margin-right: 20px;
+            }
+            h3 {
+                color: white;
+                max-width: 200px;
+                font-weight: bold;
+                @media (max-width: 454px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .slick-dots {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: absolute;
+        top: 20px !important;
+        right: 12px;
+        width: 30%;
+        bottom: auto !important;
+        @media (max-width: 1440px) {
+            right: 35px;
+        }
+        @media (max-width: 1200px) {
+            right: 37px;
+        }
+        @media (max-width: 991px) {
+            right: 40px;
+        }
+        @media (max-width: 660px) {
+            right: 50px;
+        }
+        @media (max-width: 400px) {
+            right: 60px;
+        }
+    }
+
+    .slick-dots.slick-thumb li {
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 100%;
+    }
+
+    .slick-dots.slick-thumb li.slick-active {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: gray;
+    }
+}

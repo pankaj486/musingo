@@ -1,0 +1,148 @@
+.classes--category-select {
+  text-align: center;
+}
+
+.category-select-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.category-select-des {
+  font-size: 18px;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  span {
+    color: #4ad9ca;
+    font-weight: bold;
+  }
+}
+
+.category-select__categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.category-group {
+  margin-right: 32px;
+  &:hover {
+    background: #e6e2e2;
+  }
+}
+
+
+.category-active {
+  //background: #e6e2e2;
+  border: 4px solid #4ad9ca;
+}
+
+.category-image {
+  width: 65px;
+  height: 65px;
+}
+
+.category-name {
+  font-size: 17px;
+  font-weight: bold;
+  color: #484848;
+  line-height: 1;
+  margin-top: 15px;
+}
+.category-name-des {
+  font-size: 14px;
+  color: #484848;
+  line-height: 1;
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .category-select-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .create-experience--title {
+    font-size: 22px;
+    padding: 16px 0;
+    margin-bottom: 24px;
+  }
+}
+
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+.checkbox input[type="checkbox"]:checked + .wrapperCheck {
+  background-color: #4ad9ca;
+}
+.checkbox input[type="checkbox"]:checked + .wrapperCheck .knob {
+  left: 20px;
+}
+.checkbox{
+  position: relative;
+}
+.checkbox .wrapperCheck{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -5px;
+  left: -5px;
+  background-color: #fff;
+  border: 1px solid #bcbcbc;
+  border-radius: 5px;
+  z-index: 12;
+}
+.checkbox .wrapper {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  height: 200px;
+  position: relative;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+  @media (max-width: 520px) {
+    padding: 10px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}
+.checkbox .wrapper2 {
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  height: 200px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  margin-right: 20px;
+  position: relative;
+  @media (max-width: 768px) {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  @media (max-width: 520px) {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}

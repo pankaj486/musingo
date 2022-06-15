@@ -1,0 +1,89 @@
+.concerts--experience-date {
+  text-align: center;
+}
+
+.experience-date__header {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+
+.experience-date__details {
+  margin: 0 0 30px 0;
+  padding: 0 !important;
+  font-size: 15px;
+}
+
+.experience-date__datum {
+  margin-bottom: 48px;
+}
+
+.datum {
+  margin-bottom: 24px;
+}
+
+.datum__date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.datum__date-container input, .start-end-date-container input {
+  width: 56px;
+  height: 42px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 6px;
+  border: 1px solid #3c3c3c;
+  border-radius: 8px;
+}
+
+.date--month {
+  margin: 0 10px;
+}
+
+.start-end-date-container {
+  width: 356px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-date-input-container.start-time, .end-date-input-container.end-time {
+  display: flex;
+}
+
+.time-seperator {
+  width: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+}
+
+.date-empty-element {
+  width: 56px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date-empty-element span{
+  height: 17px;
+}
+
+.date-empty-element div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  position: relative;
+  top: 2px;
+}

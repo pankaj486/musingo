@@ -1,0 +1,159 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.small-font {
+  font-size: 1rem !important;
+}
+
+.text-dark-gray {
+  color: #5e5e5e;
+}
+
+.icon-a {
+  color: #f2f2f2;
+}
+.icon-b {
+  color: #ffb400;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+}
+
+.icon-b-small {
+  color: #ffb400;
+  -webkit-text-stroke-color: white;
+}
+
+.icon-c {
+  color: #ffb400;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+}
+.icon-d {
+  color: #ffb400;
+}
+
+// .icon-d {
+//   color: yellow;
+//   -webkit-text-stroke-width: 1px;
+//   -webkit-text-stroke-color: orange;
+// }
+
+.musingoo-input-group {
+  width: 100%;
+}
+
+.musingoo-input-group .form-group {
+  margin-bottom: 0;
+}
+
+.musingoo-input {
+  // width: 172px;
+  // height: 52px;
+  width: 100%;
+  height: calc(2em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  flex: none;
+  padding: 0 0.8rem;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 9px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.musingoo-button {
+  // width: 172px;
+  // height: 52px;
+  // margin: 0 auto;
+  line-height: 2 !important;
+  border-radius: 9px !important;
+}
+
+.musingoo-hero-button {
+  width: 181.33333333333334px;
+  height: 52px;
+  border: 2.6666666666666665px solid white !important;
+}
+
+.medium-font {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .ctr-xs-hor-margin {
+    margin: 0 auto;
+  }
+
+  .musingoo-input {
+    min-width: 215px;
+    height: 52px;
+    flex: none;
+    padding: 0 0.8rem;
+  }
+  .musingoo-button {
+    min-width: 215px;
+    height: 52px;
+    margin: 0 auto;
+  }
+}
+.text-black-30 {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+.imgBorder {
+  border: 4px solid white;
+  border-radius: 50%;
+}
+
+.defBorder {
+  border: 2px solid #d6d6d6;
+  border-radius: 15px;
+}
+.defContainer {
+  margin-top: 15vh;
+  @media (max-width: 1024px) {
+    margin-top: 5vh;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
+
+.helvetica {
+  font-family: Helvetica, sans-serif !important;
+}
+
+$flexSizes: (1, 2, 3, 4);
+
+@each $flexSize in $flexSizes {
+  .flex-#{$flexSize} {
+    flex: #{$flexSize} !important;
+  }
+}
+
+$fontSizes: (10, 12, 14, 16, 18, 20, 24, 32, 40, 48, 64, 72);
+
+@each $fontSize in $fontSizes {
+  .font-#{$fontSize} {
+    font-size: #{$fontSize}px !important;
+  }
+}
+
+.br-20 {
+  border-radius: 20px !important;
+}
+
+a {
+  color: #4ad9ca !important;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.w-100 {
+  width: 100% !important;
+}

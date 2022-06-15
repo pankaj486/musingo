@@ -1,0 +1,155 @@
+.dashboard-input {
+  width: 60% !important;
+
+  .inputs {
+    width: 75% !important;
+  }
+
+  .drop {
+    width: 179px !important;
+  }
+}
+
+.dashboard-location--google-map {
+  width: 800px;
+  height: 320px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.booking-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  &__inner {
+    text-align: center;
+
+    &-heading {
+      font-size: 1.375rem;
+      font-weight: bold;
+      color: #5e5e5e;
+    }
+
+    &--sub-heading {
+      font-size: 1.175rem;
+      font-weight: bold;
+      color: #5e5e5e;
+      width: 25rem;
+      margin: auto;
+    }
+
+    &--sub-span {
+      color: #4ad9ca;
+    }
+
+    &-btn {
+      background-color: #4ad9ca;
+      color: white;
+      width: 28rem;
+      border-radius: 1.25rem;
+      height: 2.75rem;
+      margin: auto;
+      border: transparent;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+  }
+}
+
+// card
+.card-wrapper {
+  background-color: white;
+  border: 0.0625rem solid gray;
+  width: auto;
+  border-radius: 1.875rem;
+  margin-right: 1.875rem;
+
+  &__inner {
+    padding: 1.25rem;
+
+    height: 150px;
+
+    &--card-header {
+      font-size: 1.05rem;
+      margin: 0;
+      font-weight: bold;
+      color: #5e5e5e;
+    }
+
+    &--card-desc {
+      margin: 0;
+      color: #5e5e5e;
+    }
+  }
+}
+
+.news-feedback-desc {
+  position: relative;
+
+  &__img-desc {
+    width: 100%;
+    height: 974px;
+    margin: auto;
+    border-radius: 3.125rem;
+
+    &--img {
+      width: 100%;
+      height: 974px;
+      border-radius: 3.125rem;
+      margin: auto;
+
+    }
+  }
+
+  &__img-desc2 {
+    width: 100%;
+    height: 320px;
+    margin: 20px auto 0;
+    border-radius: 3.125rem;
+
+    &--img2 {
+      width: 100%;
+      height: 379px;
+      border-radius: 3.125rem;
+      margin: auto;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &--wrapper {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding-top: 1.575rem;
+    }
+  }
+
+  &__heading {
+    font-weight: 800;
+    font-size: 2rem;
+    color: white;
+
+    @media screen and(max-width:1500px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__sub-heading {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: white;
+
+    @media screen and(max-width:1500px) {
+      font-size: 1.375rem;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.trainerStat{
+    tr{
+        height: 4rem;
+        &:not(:nth-child(1)) td:nth-child(3){
+            font-weight: bold;
+        }
+    }
+}
+
+.descBox{
+    @media only screen and (min-width:1024px) {
+        max-width: 50vw;
+        margin-top: -38px;
+    }
+}
+
+.statBox{
+    @media only screen and (min-width:1024px) {
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 50vw;
+        margin-top: 2rem;
+        padding: 0 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.trainerStat .trainerStatContainer {
+    @media only screen and (max-width: 767px) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+.trainer-stat-super-trainer {
+    @media only screen and (max-width: 767px) {
+        flex-direction: column;
+    }
+}
+
+.trainer-stat-super-trainer > div {
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 20px;
+    }
+}
+
+.trainer-stat-super-trainer > div:last-of-type {
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 0;
+    }
+}

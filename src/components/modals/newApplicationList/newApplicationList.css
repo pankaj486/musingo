@@ -1,0 +1,247 @@
+.booking-requests__modal {
+  width: 28%;
+  min-width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 3px solid #D6D5D5;
+  border-radius: 60px;
+  z-index: 2000;
+  text-align: center;
+  /* max-height: 90vh; */
+}
+
+.booking-requests__close-modal {
+  position: absolute;
+  top: 26px;
+  right: 30px;
+  color: #bcbcbc;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.booking-requests__modal .requests {
+  width: 90%;
+}
+
+.booking-requests__heading {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(74, 217, 202);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.booking-requests__count {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.booking-requests__count span {
+  color: rgb(74, 217, 202);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.booking-requests__show-rest {
+  margin: 16px 0 32px 0;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.booking-requests__watch-now {
+  background-color: #fc5d68;
+  margin: 0 auto 30px auto;
+  height: 48px;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  width: calc(70% - 25px);
+  outline: none;
+  display: block;
+}
+
+.booking-requests__modal .requests {
+  height: 294px;
+  margin-bottom: 16px;
+}
+
+.booking-requests__modal .requests.show-all {
+  width: 70%;
+}
+
+.booking-requests__modal .booking-request {
+  height: 90px;
+  max-height: 90px;
+  border-radius: 16px;
+}
+
+.booking-requests__modal .booking-request__side-content {
+  width: 42%;
+  border-radius: 16px;
+}
+
+.booking-requests__modal .participant-image-card {
+  height: 90px;
+}
+
+.booking-requests__modal .participant-learning-info span {
+  font-size: 12px;
+}
+
+.booking-requests__modal p.learn {
+  font-size: 13px;
+  position: relative;
+  top: 6px;
+}
+
+.booking-requests__modal p.learn + span.group {
+  position: relative;
+  top: 3px;
+}
+
+.booking-requests__modal .booking-request__main-content {
+  width: 55%;
+  margin-left: 42%;
+}
+
+.booking-requests__modal .booking-request__instructor-details img {
+  width: 40px;
+  height: 40px;
+}
+
+.booking-requests__modal .booking-requests__instructor-name {
+  font-size: 13px;
+}
+
+.booking-requests__modal .booking-requests__price {
+  font-size: 13px;
+}
+
+.booking-requests__modal .booking-request__expires-in {
+  margin-right: 0;
+}
+
+.participant-image-card div img {
+  width: 20px;
+  height: 20px;
+  border: calc(3px / 2) solid #fff;
+}
+
+.participant-image-card div img[order="0"] {
+  margin-left: 15px;
+}
+
+.participant-image-card div img[order="1"] {
+  left: -7px;
+  z-index: 1;
+}
+
+.participant-image-card div img[order="2"] {
+  left: -14px;
+  z-index: 2;
+}
+
+.participant-image-card div img[order="3"] {
+  left: -21px;
+  z-index: 3;
+}
+
+.requests.show-all::-webkit-scrollbar {
+  width: 6px;
+}
+
+.requests.show-all::-webkit-scrollbar-thumb {
+  background: #f2f2f2;;
+  border-radius: 0;
+  scrollbar-color: #f2f2f2 transparent;
+}
+
+.requests.show-all::-webkit-scrollbar-track {
+  background: #fff;
+  scrollbar-color: #fff transparent;
+}
+
+.requests.show-all:hover::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;
+}
+
+.requests.show-all::-webkit-scrollbar-thumb:hover {
+  background: #f2f2f2;
+}
+
+.requests.show-all {
+  scrollbar-width: thin;
+  scrollbar-color: #f2f2f2 #fff;
+}
+
+.requests.show-all:hover {
+  scrollbar-color: #f2f2f2;
+}
+
+@media screen and (max-width: 1400px) {
+  .booking-requests__modal {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .booking-requests__heading {
+    font-size: 22px;
+  }
+
+  .booking-requests__count {
+    font-size: 14px;
+  }
+
+  .booking-requests__modal {
+    width: 36%;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .booking-requests__modal {
+    width: 38%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .booking-requests__modal {
+    width: 44%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .booking-requests__modal {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .booking-requests__modal {
+    width: 65%;
+    border: 0;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .booking-requests__modal {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+  }
+}
+

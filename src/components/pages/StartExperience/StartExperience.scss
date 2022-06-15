@@ -1,0 +1,87 @@
+.experienceContainer{
+    background: url('../../../assets/images/experience-bg.png') no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    padding-top: 100px;
+}
+
+.onlineMember{
+    margin-right: -10px;
+    position: relative;
+}
+.onlineMemberMaxCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.onlineMemberMaxCounterText {
+    font-weight: 600;
+}
+
+.alertSection{
+    margin-top: 5px;
+    width: 10px;
+    min-width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.experienceBox {
+    border-radius: 4rem;
+    border: 2px solid #D6D5D5 !important;
+    max-height: 434px;
+    min-width: 300px;
+    &:nth-child(1){
+        font-size: 12px;
+    }
+}
+.var{
+    font-size:10px;
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+    .start-experience-container {
+        max-width: 95vw !important;
+    }
+
+    .start-experience-container .experienceBox {
+        padding: 36px !important;
+        margin: 12px !important;
+    }
+}
+
+.instructorBadge{
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.menu-icons {
+    //margin-left: 20px;
+    //display: flex;
+    //flex-direction: column;
+    //height: 44px;
+    //align-items: center;
+    //justify-content: space-around;
+    //cursor: pointer;
+}
+
+.menu-icons svg {
+    height: 60px;
+    width: 44px;
+    cursor: pointer;
+}
+
+.menu-icons svg path {
+    fill: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+    .onlineMember {
+        width: 56px;
+        height: 56px;
+        border: 3px solid #FFF;
+    }
+}

@@ -1,0 +1,55 @@
+.friend__image-container {
+  width: 60px;
+  height: 60px;
+  background-color: #bcbcbc;
+  border-radius: 50%;
+}
+
+.friend {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-right: 12px;
+}
+
+.friend__info {
+  margin: 0 30px;
+}
+
+.friend__info p {
+  margin: 0;
+  line-height: 1;
+}
+
+.friend__name {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.friend__email {
+  font-size: 12px;
+  color: #bcbcbc;
+}
+
+.friend-select {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #4ad9ca;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.is-selected {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #4ad9ca;
+  display: inline-block;
+}
+
+
+

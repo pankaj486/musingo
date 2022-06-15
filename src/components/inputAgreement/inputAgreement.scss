@@ -1,0 +1,40 @@
+.agButton {
+  width: 250px !important;
+  height: 45px !important;
+  margin: 0 auto;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agHeader {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+  .agButton-mobile-input-agreement {
+    width: 100% !important;
+  }
+  .agButtonContainer {
+    background: white;
+    position: fixed;
+    bottom: 0;
+    padding: 20px 0px;
+  }
+}
+
+.musingoo-inputs{
+  width: 350px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+

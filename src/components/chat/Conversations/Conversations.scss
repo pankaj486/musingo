@@ -1,0 +1,59 @@
+.conversations {
+  width: 30%;
+  height: 530px;
+  @media only screen and (max-width: 1024px) {
+    height: auto !important;
+  }
+}
+
+.conversations-list {
+  height: calc(530px - 80px);
+  overflow-y: scroll;
+  padding-right: 12px;
+  @media only screen and (max-width: 1024px) {
+    height: auto !important;
+  }
+}
+
+.conversations-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.conversations-list::-webkit-scrollbar-thumb {
+  background: #f2f2f2;
+  border-radius: 0;
+  scrollbar-color: #f2f2f2 transparent;
+}
+
+.conversations-list::-webkit-scrollbar-track {
+  background: #fff;
+  scrollbar-color: #fff transparent;
+}
+
+.conversations-list:hover::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;
+}
+
+.conversations-list::-webkit-scrollbar-thumb:hover {
+  background: #f2f2f2;
+}
+
+.conversations-list {
+  scrollbar-width: thin;
+  scrollbar-color: #f2f2f2 #fff;
+}
+
+.conversations-list:hover {
+  scrollbar-color: #f2f2f2;
+}
+
+.empty-inbox-message {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.empty-inbox-message p {
+  width: 60%;
+  text-align: center;
+  font-size: 22px;
+}

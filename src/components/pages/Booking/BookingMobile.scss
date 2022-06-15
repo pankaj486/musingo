@@ -1,0 +1,31 @@
+.booking-mobile__title {
+  display: block;
+  font-size: 15px;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-mobile__description {
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-mobile__mobile-form {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+  }
+}
+
+.booking-mobile .booking__phone-input-container .PhoneInput {
+  justify-content: flex-start;
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+  }
+}

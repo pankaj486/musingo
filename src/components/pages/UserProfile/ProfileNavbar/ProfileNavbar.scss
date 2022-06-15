@@ -1,0 +1,240 @@
+.profile__navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+  margin-top: 40px;
+}
+
+.profile__navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1031;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 0;
+  border-bottom: 1px solid #f2f2f2;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.navbar__personal-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.info--instructor-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  margin-right: 24px;
+  position: relative;
+}
+
+img.info--instructor {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.edit-user-profile img.info--instructor {
+  cursor: pointer;
+}
+
+.edit-user-profile .info-instructor-overlay {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #d2d1d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-user-profile .info-instructor-overlay span {
+  color: #fff;
+}
+
+.info--container {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.info--container .info__name {
+  font-size: 20px;
+}
+
+.trainer-edit-title-selection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px
+}
+
+.trainer-edit-title-block {
+  border: 2px solid #ededed;
+  border-radius: 8px;
+  width: 74px;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-right: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.trainer-edit-title-block.active {
+  border-color: #4ad9ca;
+}
+
+.trainer-edit-title-block:last-of-type {
+  margin-right: 0;
+}
+
+.trainer-edit-title-block-img-container {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trainer-edit-title-block img {
+  width: 36px;
+  height: 36px;
+}
+
+.trainer-edit-title-block p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.edit-user-profile .personal-motto-input {
+  width: 166px;
+  min-width: 166px;
+  height: 70px;
+  min-height: 70px;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 8px;
+  outline: 0;
+}
+
+.edit-user-profile .personal-motto-input::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+.edit-user-profile .personal-motto-input::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+.info__title {
+  height: 30px;
+  border: 2px solid #4ad9ca;
+  border-radius: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0 0;
+}
+
+.info__title span {
+  line-height: 1;
+  color: #4ad9ca;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  top: 1px
+}
+
+.navbar__personal-motto {
+  width: 160px;
+}
+
+.navbar__personal-motto p {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.navbar__trainer-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar__trainer-info > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar__trainer-info .bold {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.trainer-info__follower {
+  margin: 0 28px;
+}
+
+.navbar__follow-cta {
+  background-color: #fc5d68;
+  border-radius: 100px;
+  width: 110px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.profile-following {
+  background-color: #fff;
+  border-color: #fc5d68;
+}
+
+.navbar__follow-cta.profile-following span {
+  color: #fc5d68;
+}
+
+.navbar__follow-cta span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .profile__navbar {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .profile__navbar {
+    flex-direction: column;
+  }
+
+  .profile__navbar > div {
+    margin: 10px 0;
+  }
+
+  .edit-user-profile .info--container {
+    height: auto;
+  }
+}

@@ -1,0 +1,84 @@
+.deny-request-container {
+  text-align: center;
+}
+
+.deny-request-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.deny-request-container p {
+  width: 80%;
+  font-size: 15px;
+  margin: 0 auto;
+}
+
+.reason-dropdown:after {
+  display: none !important;
+}
+
+.reason-dropdown {
+  width: 80%;
+  height: 45px;
+  position: relative;
+  border-radius: 16px;
+  margin-top: 28px;
+  outline: none !important;
+  border-color: #a8a8a8 !important;
+}
+
+.dropdown-label {
+  color: #969595;
+  font-size: 16px;
+}
+
+.deny-request-container .dropdown-menu.show{
+  width: 80%;
+}
+
+.reason-dropdown svg {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  margin-top: -11px;
+  width: 19px;
+  height: 19px;
+}
+
+.reason-dropdown svg path {
+  fill: #bcbcbc;
+}
+
+.deny-request-comments {
+  width: 78%;
+  height: 120px;
+  max-height: 120px;
+  min-height: 120px;
+  border-radius: 16px;
+  margin-top: 28px;
+  border-color: #a8a8a8 !important;
+  border: 1px solid;
+  padding: 10px;
+  outline: none !important;
+}
+
+.deny-request-cta {
+  background-color: #a8a8a8;
+  margin: 0 auto 24px auto;
+  height: 56px;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  width: 75%;
+  outline: none;
+  display: block;
+  margin-top: 20px;
+}
+
+.back-cta {
+  color: #4ad9ca;
+  font-weight: bold;
+  font-size: 16px;
+}

@@ -1,0 +1,38 @@
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 16px 0;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.message-container.me {
+  justify-content: flex-end;
+}
+
+.message-container .message {
+  border: 1px solid #7d7d7d;
+  padding: 10px;
+  border-radius: 16px;
+  font-size: calc(25px / 2);
+}
+
+.message-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.message-container img[alt="participant"] {
+  margin-right: 16px;
+}
+
+.message-container img[alt="me"] {
+  margin-left: 16px;
+}
+
+.unread-message {
+  border: 2px solid #888888 !important;
+}
+

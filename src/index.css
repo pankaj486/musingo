@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #484848 !important;
+  overflow-x: hidden;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+body.modal-open {
+  padding-right: 0 !important;
+}
+.modal-open {
+  overflow-y: auto !important;
+}
+
+body::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.modal::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #ababab;
+  border-radius: 0;
+}
+body::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+body::-webkit-scrollbar-track {
+  scrollbar-color: #ededed transparent;
+}
+body::-webkit-scrollbar-thumb {
+  scrollbar-color: #ababab transparent;
+}
+body:hover::-webkit-scrollbar-thumb {
+  background-color: #ababab;
+}
+body::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #ababab #f3f3f3;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #ababab #f3f3f3;
+}
+body:hover {
+  scrollbar-color: #ababab;
+}
+@media screen and (max-width: 767px) {
+  html body #root input:not(.customBorder):not(.booking-address__form-input):not(.PhoneInputInput):not(.booking-mobile-verification__input) {
+    border-color: #5e5e5e !important;
+  }
+
+  html input:not(.customBorder) {
+    border-color: #5e5e5e !important;
+  }
+
+  html .musingoo-input:not(.customBorder) {
+    border-color: #5e5e5e !important;
+  }
+
+  html .border-primary:not(.customBorder) {
+    border-color: #5e5e5e !important;
+  }
+}
+.gm-control-active {
+  border-radius: 50%;
+}
+
+body .toast:first-of-type {
+  margin-top: 100px !important;
+}
+
+.btn-primary:hover {
+  background: #4ad9ca !important;
+  border-color: #4ad9ca !important;
+}
+
+input {
+  -webkit-user-select:text;
+}

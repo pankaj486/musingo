@@ -1,0 +1,70 @@
+.chatBoxCardHeaderBtn { 
+    font-weight: bold;
+    font-size: 15px;
+    color: #4ad9ca;
+    cursor: pointer;
+}
+.chatBoxCardHeader {
+    position: relative;
+}
+.chatBoxCardActionContent{
+    position: absolute;
+    top: 3px;
+    right: 40px;
+}
+
+.expChatBoxHistoryItem {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+.expChatBoxHistoryItemReverse {
+    flex-direction: row-reverse;
+}
+
+.expChatBoxHistoryItemAvatar {
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+}
+
+.expChatBoxHistoryMsg {
+    border: 1px solid #d6d5d5;
+    padding: 10px;
+    border-radius: 17px;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.expChatBoxHistoryMsgReverse {
+    margin-right: 15px;
+    background-color: #4ad9ca;
+    color: #fff;
+}
+.expChatBoxHistoryMsgReverse2 {
+    margin-right: 15px;
+    background-color: white;
+    color: #000;
+}
+
+.expChatBoxInput {
+    margin: 10px 0;
+}
+
+.expChatBoxInputField {
+    padding: 20px !important;
+    height: 40px !important;
+    border-radius: 20px !important;
+    border: 1px solid #5e5e5e !important;
+}
+
+.btn-send{
+ width: 100%;
+ background-color: gray;
+ height: 40px !important;
+ border-radius: 20px;
+ font-size: 20px;
+ color: white;
+}

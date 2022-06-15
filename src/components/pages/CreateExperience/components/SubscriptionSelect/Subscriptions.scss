@@ -1,0 +1,35 @@
+.subscriptions {
+  text-align: center;
+}
+
+.subscription--header {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+
+.subscription--description {
+  margin: 0 0 24px 0;
+  padding: 0 !important;
+  font-size: 15px;
+}
+
+.subscription--description .recommended {
+  font-weight: bold;
+  color: #4ad9ca;
+}
+
+.subscribe-to {
+  text-align: center;
+  display: flex;
+  width: 300px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.subscriptions .weiter-cta {
+  margin-top: 30px;
+}

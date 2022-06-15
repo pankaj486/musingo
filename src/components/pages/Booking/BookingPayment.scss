@@ -1,0 +1,197 @@
+.booking-payment {
+  width: 80%;
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+    margin-bottom: 109px;
+  }
+}
+
+.booking-payment__title {
+  display: block;
+  font-size: 15px;
+}
+
+.booking-payment__description {
+  font-size: 14px;
+  display: block;
+}
+
+.booking-payment__safe-payment-and-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking-payment__options-navigation {
+  position: relative;
+  width: 60px;
+}
+
+.booking-payment__safe-payment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 40%;
+}
+
+.booking-payment__safe-payment-img-container img {
+  width: 40px;
+  height: 40px;
+}
+
+.booking-payment__safe-payment-content span {
+  font-size: 13px;
+  line-height: 1.1;
+  display: block;
+}
+
+.booking-payment__options-wrapper {
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.booking-payment__option {
+  border: 3px solid #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 200px;
+  max-height: 140px;
+  min-height: 140px;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  @media screen and (max-width: 1200px) {
+    height: 125px;
+    min-height: 125px;
+  }
+  @media screen and (max-width: 1100px) {
+    height: 120px;
+    min-height: 120px;
+  }
+}
+
+.booking-payment__option-container {
+  border-radius: 20px;
+}
+
+.booking-payment__option svg {
+  width: 70px;
+  height: auto;
+}
+
+.booking-payment__option svg path {
+  fill: #fff;
+}
+
+.booking-payment__option img {
+  width: 60px;
+  height: auto;
+}
+
+.booking-payment__option--empty {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+}
+
+.booking-payment__option-info {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 9px;
+  color: #bcbcbc;
+}
+
+.booking-payment--selected {
+  border: 3px solid #4ad9ca;
+}
+
+.booking-payment__options-container {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  outline: 0 !important;
+}
+
+.booking-payment .swiper-button-next:after,
+.booking-payment .swiper-button-prev:after {
+  outline: 0 !important;
+  font-size: 25px;
+  color: #bcbcbc;
+  font-weight: bold;
+}
+
+.booking-payment__options-navigation .swiper-button-next {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  margin: 0 !important;
+}
+
+.booking-payment__options-wrapper .swiper-button-prev {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  margin: 0 !important;
+}
+
+.booking-payment .swiper-button-next,
+.booking-payment .swiper-button-prev {
+  @media screen and (max-width: 1200px) {
+    display: none !important;
+  }
+}
+
+.booking-payment .booking-payment--inactive-cta {
+  background-color: #bcbcbc !important;
+}
+
+.booking-payment__other-payment-methods-container {
+  border: 2px solid #ededed;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.booking-payment__payment-methods-title {
+  color: #bcbcbc;
+}
+
+.booking-payment__other-payment-methods {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking-payment__other-payment-method {
+  width: 30px;
+  height: auto;
+}
+
+.booking-payment__terms-and-conditions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.booking-payment__terms-and-conditions .custom-control-label {
+  font-size: 13px;
+}
+.booking-payment__terms-and-conditions .custom-control-label strong {
+  color: #4ad9ca;
+}
+
+#booking-payment__terms-and-condition {
+  margin-right: 12px;
+  outline: none;
+}

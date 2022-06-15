@@ -1,0 +1,258 @@
+.booking-summary {
+  width: 100%;
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+  }
+}
+
+.booking-summary__title {
+  display: block;
+  font-size: 18px;
+}
+
+.booking-summary__description {
+  display: block;
+}
+
+.booking-summary__safe-payment-and-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking-summary__options-navigation {
+  position: relative;
+  width: 60px;
+}
+
+.booking-summary__safe-payment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 40%;
+}
+
+.booking-summary__options-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.booking-summary__option {
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 200px;
+  max-height: 130px;
+  min-height: 130px;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 20px;
+  @media screen and (max-width: 1340px) {
+    height: 120px;
+    min-height: 120px;
+  }
+  @media screen and (max-width: 1250px) {
+    height: 120px;
+    min-height: 120px;
+  }
+  @media screen and (max-width: 1150px) {
+    height: 100px;
+    min-height: 100px;
+  }
+}
+
+.booking-summary__option-container {
+  border-radius: 20px;
+}
+
+.booking-summary__option svg {
+  width: 70px;
+  height: 70px;
+  @media screen and (max-width: 1200px) {
+    width: 60px;
+    height: auto;
+  }
+}
+
+.booking-summary__option svg path {
+  fill: #fff;
+}
+
+.booking-summary__option img {
+  width: 50%;
+  height: auto;
+}
+
+.booking-summary__option--empty {
+  background-color: #cccccc;
+  width: 100%;
+  height: 100%;
+}
+
+.booking-summary__option-info {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 10px;
+  color: #131313;
+  font-weight: 600;
+}
+
+.booking-summary--selected {
+  border: 4px solid #4ad9ca;
+}
+
+.booking-summary__options-container {
+  margin-bottom: 0px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  outline: 0 !important;
+}
+
+.booking-summary .swiper-button-next:after, .booking-summary .swiper-button-prev:after {
+  outline: 0 !important;
+  font-size: 25px;
+  color: #bcbcbc;
+  font-weight: bold;
+}
+
+.booking-summary__options-navigation .swiper-button-next {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  margin: 0 !important;
+}
+
+.booking-summary__options-wrapper .swiper-button-prev {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  margin: 0 !important;
+}
+
+.booking-summary .swiper-button-next, .booking-summary .swiper-button-prev {
+  @media screen and (max-width: 1200px) {
+    display: none !important;
+  }
+}
+
+.booking-summary .booking-summary--inactive-cta {
+  background-color: #bcbcbc !important;
+}
+
+.booking-summary__other-payment-methods-container {
+  padding: 0 20px 20px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.booking-summary__payment-methods-title {
+  color: #bcbcbc;
+}
+
+.booking-summary__other-payment-methods {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.booking-summary__other-payment-method {
+  width: 30px;
+  height: auto;
+  margin-right: 16px;
+}
+
+.booking-summary__other-payment-method.klarna, .booking-summary__other-payment-method.sofort {
+  width: 40px;
+  height: auto;
+}
+
+.booking-summary__cancellation-policy-wrapper {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 32px;
+}
+
+.booking-summary__cancellation-policy {
+  padding: 10px 20px;
+  border: 1px solid #ffb400;
+  border-radius: 12px;
+}
+
+.booking-summary__cancellation-policy p {
+  margin: 0;
+  font-size: 11px;
+}
+
+.booking-summary__info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.booking-summary__info-icon-container {
+  margin-right: 14px;
+  line-height: 1;
+}
+
+.booking-summary__info-icon-container img {
+  height: 60px;
+  width: 60px;
+}
+
+.booking-summary__info-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.booking-summary__info-description {
+  font-size: 12px;
+  margin-top: 60px;
+}
+
+.booking-summary__info-description {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.booking-summary__info-description:first-of-type {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  outline: 0 !important;
+}
+
+.booking-summary__options-wrapper .swiper-button-next {
+  position: absolute;
+  right: -24px;
+  transform: translateY(-50%);
+  top: 65%;
+}
+
+.booking-summary__options-wrapper .swiper-button-prev {
+  position: absolute;
+  left: -20px;
+  transform: translateY(-50%);
+}
+
+.booking-summary .swiper-button-next, .booking-summary .swiper-button-prev {
+  @media screen and (max-width: 1200px) {
+    display: none !important;
+  }
+}

@@ -1,0 +1,42 @@
+.booking-mobile-verification__title {
+  display: block;
+  font-size: 15px;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-mobile-verification__description {
+  font-size: 14px;
+  font-color: #4ad9ca;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-mobile-verification__mobile-form {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+  }
+}
+
+.booking-mobile-verification__form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-mobile-verification__input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-mobile-verification__input {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 2px solid #4ad9ca;
+}

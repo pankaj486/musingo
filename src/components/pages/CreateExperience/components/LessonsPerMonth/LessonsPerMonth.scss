@@ -1,0 +1,43 @@
+.lessons-per-month {
+  text-align: center;
+}
+
+.lessons-per-month__header {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+
+.lessons-per-month__details {
+  margin: 0 0 30px 0;
+  padding: 0 !important;
+  font-size: 15px;
+}
+
+.lessons-per-month__input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.lesson-input-container__input {
+  width: 100px;
+  height: 55px;
+  border-radius: 8px;
+  border: 1px solid #3c3c3c;
+  text-align: center;
+  margin-right: 12px;
+}
+
+.lesson-input-container__empty-element {
+  height: 55px;
+  width: 143px;
+}
+
+.lesson-input-container__input-label {
+  font-size: 20px;
+}

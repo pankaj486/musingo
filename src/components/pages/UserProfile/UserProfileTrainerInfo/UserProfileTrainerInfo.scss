@@ -1,0 +1,22 @@
+.user-profile__trainer-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  padding-bottom: 48px;
+  padding-top: 48px;
+}
+
+@media screen and (max-width: 1024px) {
+  .user-profile__trainer-details {
+    flex-direction: column;
+  }
+
+  .user-profile__trainer-details > div {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+  }
+}

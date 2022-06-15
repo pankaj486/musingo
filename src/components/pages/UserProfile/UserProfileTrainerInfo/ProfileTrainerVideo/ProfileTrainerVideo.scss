@@ -1,0 +1,39 @@
+.profile-trainer-video {
+  width: 30%;
+}
+
+.profile-trainer-video video {
+  outline: none;
+}
+
+.trainer-profile-edit-upload-video {
+  background-color: #d2d1d1;
+  width: 25%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.trainer-profile-edit-upload-video button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.trainer-profile-edit-upload-video button:focus {
+  box-shadow: 0 0 0 #fff;
+}
+
+.trainer-profile-edit-upload-video div {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.trainer-profile-edit-upload-video span {
+  color: #fff;
+  font-weight: bold;
+}

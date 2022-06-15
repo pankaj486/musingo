@@ -1,0 +1,35 @@
+.toggle-switch {
+  width: 55px;
+  height: 30px;
+  background-color: #eee;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: flex-start;
+  margin: 0 auto 10px auto;
+}
+
+.toggle-switch:after {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+  content: '';
+  margin: 2px 3px;
+  //transition: left 0.2s;
+}
+
+#toggle-checkbox {
+  display: none;
+}
+
+#toggle-checkbox:checked + .toggle-switch:after {
+  left: 23px;
+}
+
+#toggle-checkbox:checked + .toggle-switch {
+  background-color: #4ad9ca;
+  justify-content: flex-end;
+}
+

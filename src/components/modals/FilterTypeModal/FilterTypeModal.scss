@@ -1,0 +1,57 @@
+.filter-type-modal-backdrop {
+  width: 100vw;
+  height: 100vh; //subtracted height of nav
+  background-color: #fff;
+  z-index: 1028;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+
+.filter-type-modal {
+  width: 700px;
+  height: 340px;
+  z-index: 1029;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  border-radius: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__title span {
+  font-size: 32px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  top: 70px;
+}
+
+.modal__footer span {
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.filter-type-modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 32px;
+}

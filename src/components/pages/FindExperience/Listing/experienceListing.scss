@@ -1,0 +1,22 @@
+.addImage {
+  background: #c0c0c0;
+  width: 130px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.otherImage {
+  img {
+    width: 130px;
+    height: 80px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+}
+
+.exBorder {
+  border-radius: 15px !important;
+}

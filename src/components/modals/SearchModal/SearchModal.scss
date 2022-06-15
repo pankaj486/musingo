@@ -1,0 +1,124 @@
+.search-modal {
+  width: 70%;
+  min-width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 80px 130px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #5e5e5e;
+  border-radius: 60px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 991px) {
+    width: 50%;
+    transform: translate(-50%, -43%);
+  }
+  @media (max-width: 768px) {
+    border: none;
+  }
+
+  .search-modal-heading {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: helvetica !important;
+    @media (max-width: 991px) {
+      font-size: 30px;
+    }
+  }
+  input {
+    border: 1px solid #5e5e5e;
+    width: 400px;
+    height: 70px;
+    font-size: 16px;
+    border-radius: 50px;
+    text-align: center;
+    margin-right: 30px;
+    padding: 0 !important;
+    @media (max-width: 991px) {
+      width: 270px;
+      margin-right: 0;
+    }
+  }
+  .dropdown {
+    .arrow {
+      font-size: 16px;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    button {
+      font-size: 20px !important;
+      font-weight: bold;
+      border: 1px solid #5e5e5e;
+      width: 240px;
+      height: 70px;
+      border-radius: 50px !important;
+      text-align: center;
+      margin-right: 30px;
+      @media (max-width: 991px) {
+        margin-right: 0px;
+      }
+    }
+    .dropdown-menu {
+      border-radius: 30px;
+      button {
+        border: none !important;
+        border-bottom: 1px solid #d6d5d5 !important;
+        font-size: 20px !important;
+        font-weight: bold;
+        width: 240px;
+        height: 50px;
+        margin: 0px 20px 20px 20px;
+        padding-bottom: 20px;
+        border-radius: 0px !important;
+        text-align: center;
+      }
+    }
+  }
+  /* Overriding styles */
+
+  ::-webkit-input-placeholder {
+    font-size: 20px !important;
+    font-weight: bold;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 20px !important;
+    font-weight: bold;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 20px !important;
+    font-weight: bold;
+  }
+  .primary-btn {
+    background-color: #4ad9ca;
+    width: 200px;
+    height: 70px;
+    border-radius: 50px;
+    text-align: center;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    @media (max-width: 991px) {
+      width: 270px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .close-modal-button {
+    top: 15px;
+    left: 20px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}

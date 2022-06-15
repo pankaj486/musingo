@@ -1,0 +1,48 @@
+.error404Page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 50px 30px;
+}
+
+.error404PageButtons {    
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.error404PageButtonsItem {
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.error404PageHeader {
+    margin-bottom: 40px;
+}
+
+.error404PageHeaderTitle {
+    font-size: 50px;
+    margin-bottom: 15px;
+
+    @media screen and (max-width: 1024px) {
+        font-size: 40px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 35px;
+    }
+}
+.error404PageHeaderDesc {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 500;
+}

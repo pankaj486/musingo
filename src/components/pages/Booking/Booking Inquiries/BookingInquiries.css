@@ -1,0 +1,156 @@
+.booking-inquiries-wrapper {
+  margin-top: 96px;
+  padding-bottom: 20px;
+}
+
+.inquiries-title {
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  left: 30px;
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.booking-inquiries-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-inquiries-container > div {
+  height: 530px;
+  display: inline-block;
+}
+
+.booking-inquiries__requests {
+  overflow-y: scroll;
+  width: 26%;
+}
+
+.booking-inquiries-container .booking-inquiries__experience {
+  width: 25%;
+}
+
+.booking-inquiries-container .requests {
+  overflow: visible;
+  height: auto;
+  width: 100%;
+  padding: 0 12px 0 0!important;
+}
+
+.booking-inquiries__request-details {
+  width: 25%;
+  margin: 0 38px;
+}
+
+.booking-inquiries-cancel-request {
+  width: 23%;
+  padding: 48px 0;
+  background-color: #fff;
+  border: 3px solid #d6d5d5;
+  border-radius: 60px;
+  margin-right: 50px;
+}
+
+.booking-details__comments {
+  line-height: 1.2 !important;
+}
+
+@media (max-width: 1350px) {
+  .booking-inquiries-container > div {
+    width: 27%;
+  }
+
+  .booking-inquiries__requests {
+    width: 28% !important;
+  }
+
+  .booking-inquiries-container .booking-inquiries__experience {
+    width: 27%;
+  }
+
+  .inquiries-title {
+    left: 14px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .booking-inquiries-container {
+    width: 100%;
+  }
+
+  .booking-inquiries-container > div {
+    width: 30%;
+  }
+
+  .booking-inquiries__requests {
+    width: 30% !important;
+  }
+
+  .booking-inquiries-container .booking-inquiries__experience {
+    width: 30%;
+  }
+
+  .inquiries-title {
+    left: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .booking-inquiries-wrapper {
+    margin-top: 30px;
+  }
+
+  .booking-inquiries-container {
+    width: 100%;
+    display: block;
+  }
+
+  .booking-inquiries-container > div {
+    width: 90% !important;
+    display: block;
+    margin: 30px auto;
+  }
+
+  .inquiries-title {
+    left: 0;
+  }
+}
+
+
+.booking-inquiries__requests::-webkit-scrollbar {
+  width: 6px;
+}
+
+.booking-inquiries__requests::-webkit-scrollbar-thumb {
+  background: #f2f2f2;;
+  border-radius: 0;
+  scrollbar-color: #f2f2f2 transparent;
+}
+
+.booking-inquiries__requests::-webkit-scrollbar-track {
+  background: #fff;
+  scrollbar-color: #fff transparent;
+}
+
+.booking-inquiries__requests:hover::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;
+}
+
+.booking-inquiries__requests::-webkit-scrollbar-thumb:hover {
+  background: #f2f2f2;
+}
+
+.booking-inquiries__requests {
+  scrollbar-width: thin;
+  scrollbar-color: #f2f2f2 #fff;
+}
+
+.booking-inquiries__requests:hover {
+  scrollbar-color: #f2f2f2;
+}

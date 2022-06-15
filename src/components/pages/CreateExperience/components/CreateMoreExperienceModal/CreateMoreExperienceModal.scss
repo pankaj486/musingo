@@ -1,0 +1,86 @@
+.create-more-experience-modal {
+  width: 430px;
+  //min-width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #5e5e5e;
+  border-radius: 60px;
+  z-index: 2000;
+  height: calc(100vh - 10px);
+}
+
+.experience-modal__header {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 28px;
+  line-height: 1.2;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.experience-modal__detail {
+  font-size: 14px;
+  text-align: center;
+}
+
+.create-more-experience-modal .create-experience {
+  margin-top: 0;
+  height: auto;
+}
+
+.create-more-experience-modal .create-experience--title {
+  display: none;
+}
+
+.create-more-experience-modal .create-experience__type > a {
+  width: 120px;
+  height: 80px;
+}
+
+.create-more-experience-modal .create-experience__type > a:last-of-type {
+  margin-right: 0;
+}
+
+//.create-more-experience-modal .type--instrument-rental .type__name:last-of-type {
+//  display: none;
+//}
+
+.create-more-experience-modal .type__name {
+  font-size: 20px;
+}
+
+.experience-modal__create-more-cta {
+  width: 300px;
+  height: 40px;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: bold;
+  background-color: #4ad9ca;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.experience-modal__create-later {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-modal__create-later span {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .create-more-experience-modal {
+    width: 100%;
+    border: none;
+  }
+}

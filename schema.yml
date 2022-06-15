@@ -1,0 +1,4366 @@
+openapi: 3.0.3
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /api/add-teaser-contact/:
+    post:
+      operationId: add_teaser_contact_create
+      tags:
+      - add-teaser-contact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddContactRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AddContactRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AddContactRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/age-group/:
+    get:
+      operationId: age_group_list
+      description: A simple ViewSet for viewing the different Age Groups
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - age-group
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAgeGroupList'
+          description: ''
+  /api/age-group/{uid}/:
+    get:
+      operationId: age_group_retrieve
+      description: A simple ViewSet for viewing the different Age Groups
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - age-group
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgeGroup'
+          description: ''
+  /api/become-teacher:
+    get:
+      operationId: become_teacher_retrieve
+      description: A simple ViewSet for creating a new application.
+      tags:
+      - become-teacher
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeacherApplication'
+          description: ''
+    post:
+      operationId: become_teacher_create
+      description: A simple ViewSet for creating a new application.
+      tags:
+      - become-teacher
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeacherApplication'
+          description: ''
+  /api/bookings/:
+    get:
+      operationId: bookings_list
+      description: A viewset for listing all current bookings
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - bookings
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPolymorphicBookingList'
+          description: ''
+  /api/bookings/{uid}/:
+    get:
+      operationId: bookings_retrieve
+      description: A viewset for listing all current bookings
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - bookings
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolymorphicBooking'
+          description: ''
+  /api/email-verify/:
+    post:
+      operationId: email_verify_create
+      tags:
+      - email-verify
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailVerification'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/EmailVerification'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/EmailVerification'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailVerification'
+          description: ''
+  /api/experience/:
+    get:
+      operationId: experience_list
+      description: A viewset for viewing all Experiences
+      parameters:
+      - in: query
+        name: age_group
+        schema:
+          type: string
+        description: Age Group
+      - in: query
+        name: distance_gt
+        schema:
+          type: number
+        description: minimum distance from current location
+      - in: query
+        name: distance_lt
+        schema:
+          type: number
+        description: maximum distance from current location
+      - in: query
+        name: experience_type
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - grouplesson
+            - privatelesson
+        description: Lesson Type
+        explode: true
+        style: form
+      - in: query
+        name: for_kids
+        schema:
+          type: boolean
+        description: Is a "For Kids" lesson
+      - in: query
+        name: genre
+        schema:
+          type: string
+        description: Genre
+      - in: query
+        name: instrument
+        schema:
+          type: string
+        description: Instrument
+      - in: query
+        name: lat
+        schema:
+          type: number
+        description: latitude of current location
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: lng
+        schema:
+          type: number
+        description: longitude of current location
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - in: query
+        name: price_gte
+        schema:
+          type: number
+        description: Base Price Greater or Equal
+      - in: query
+        name: price_lte
+        schema:
+          type: number
+        description: Base Price Less or Equal
+      - in: query
+        name: time_slot_week_day
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+            - 7
+        description: Which weekdays are they available
+        explode: true
+        style: form
+      - in: query
+        name: title__icontains
+        schema:
+          type: string
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPolymorphicExperienceList'
+          description: ''
+  /api/experience/{uid}/:
+    get:
+      operationId: experience_retrieve
+      description: A viewset for viewing all Experiences
+      parameters:
+      - in: query
+        name: distance_gt
+        schema:
+          type: number
+        description: minimum distance from current location
+      - in: query
+        name: distance_lt
+        schema:
+          type: number
+        description: maximum distance from current location
+      - in: query
+        name: lat
+        schema:
+          type: number
+        description: latitude of current location
+      - in: query
+        name: lng
+        schema:
+          type: number
+        description: longitude of current location
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolymorphicExperience'
+          description: ''
+  /api/experience/banner:
+    post:
+      operationId: experience_banner_create
+      description: View for creating banner images (before they are initially set)
+      tags:
+      - experience
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Banner'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Banner'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Banner'
+          description: ''
+  /api/experience/gallery/:
+    post:
+      operationId: experience_gallery_create
+      description: incomplete!
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          description: No response body
+  /api/experience/gallery/{uid}/:
+    delete:
+      operationId: experience_gallery_destroy
+      description: incomplete!
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/experience/group/lessons/:
+    get:
+      operationId: experience_group_lessons_list
+      description: A viewset for listing, creating, deleting and updating the current
+        users group lessons
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGroupLessonList'
+          description: ''
+    post:
+      operationId: experience_group_lessons_create
+      description: A viewset for listing, creating, deleting and updating the current
+        users group lessons
+      tags:
+      - experience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupLessonCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupLessonCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupLessonCreate'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupLessonCreate'
+          description: ''
+  /api/experience/group/lessons/{uid}/:
+    get:
+      operationId: experience_group_lessons_retrieve
+      description: A viewset for listing, creating, deleting and updating the current
+        users group lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupLesson'
+          description: ''
+    put:
+      operationId: experience_group_lessons_update
+      description: A viewset for listing, creating, deleting and updating the current
+        users group lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupLesson'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupLesson'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupLesson'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupLesson'
+          description: ''
+    patch:
+      operationId: experience_group_lessons_partial_update
+      description: A viewset for listing, creating, deleting and updating the current
+        users group lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedGroupLesson'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedGroupLesson'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedGroupLesson'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupLesson'
+          description: ''
+    delete:
+      operationId: experience_group_lessons_destroy
+      description: A viewset for listing, creating, deleting and updating the current
+        users group lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/experience/private/bookings/student/:
+    get:
+      operationId: experience_private_bookings_student_list
+      description: A viewset for managing the current users booked lessons
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - in: query
+        name: state
+        schema:
+          type: string
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPrivateLessonBookingList'
+          description: ''
+    post:
+      operationId: experience_private_bookings_student_create
+      description: A viewset for managing the current users booked lessons
+      tags:
+      - experience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrivateLessonBooking'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PrivateLessonBooking'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PrivateLessonBooking'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLessonBooking'
+          description: ''
+  /api/experience/private/bookings/student/{uid}/:
+    get:
+      operationId: experience_private_bookings_student_retrieve
+      description: A viewset for managing the current users booked lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLessonBooking'
+          description: ''
+  /api/experience/private/bookings/teacher/:
+    get:
+      operationId: experience_private_bookings_teacher_list
+      description: A viewset for managing bookings of the current teachers private
+        lessons
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - in: query
+        name: state
+        schema:
+          type: string
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPrivateLessonBookingList'
+          description: ''
+  /api/experience/private/bookings/teacher/{uid}/:
+    get:
+      operationId: experience_private_bookings_teacher_retrieve
+      description: A viewset for managing bookings of the current teachers private
+        lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLessonBooking'
+          description: ''
+  /api/experience/private/bookings/teacher/{uid}/accept/:
+    post:
+      operationId: experience_private_bookings_teacher_accept_create
+      description: Action that accepts an users Private Lesson Request
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLessonBooking'
+          description: ''
+  /api/experience/private/bookings/teacher/{uid}/decline/:
+    post:
+      operationId: experience_private_bookings_teacher_decline_create
+      description: Action that declines an users Private Lesson Request
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLessonBooking'
+          description: ''
+  /api/experience/private/gallery/:
+    get:
+      operationId: experience_private_gallery_list
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGalleryImageList'
+          description: ''
+    post:
+      operationId: experience_private_gallery_create
+      tags:
+      - experience
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/GalleryImage'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GalleryImage'
+          description: ''
+  /api/experience/private/gallery/{uid}/:
+    get:
+      operationId: experience_private_gallery_retrieve
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GalleryImage'
+          description: ''
+    delete:
+      operationId: experience_private_gallery_destroy
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/experience/private/lessons/:
+    get:
+      operationId: experience_private_lessons_list
+      description: A view for creating, deleting, updating, and displaying the current
+        users private lessons
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPrivateLessonList'
+          description: ''
+    post:
+      operationId: experience_private_lessons_create
+      description: A view for creating, deleting, updating, and displaying the current
+        users private lessons
+      tags:
+      - experience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrivateLessonCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PrivateLessonCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PrivateLessonCreate'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLessonCreate'
+          description: ''
+  /api/experience/private/lessons/{uid}/:
+    get:
+      operationId: experience_private_lessons_retrieve
+      description: A view for creating, deleting, updating, and displaying the current
+        users private lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLesson'
+          description: ''
+    put:
+      operationId: experience_private_lessons_update
+      description: A view for creating, deleting, updating, and displaying the current
+        users private lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrivateLesson'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PrivateLesson'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PrivateLesson'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLesson'
+          description: ''
+    patch:
+      operationId: experience_private_lessons_partial_update
+      description: A view for creating, deleting, updating, and displaying the current
+        users private lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPrivateLesson'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPrivateLesson'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPrivateLesson'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLesson'
+          description: ''
+    delete:
+      operationId: experience_private_lessons_destroy
+      description: A view for creating, deleting, updating, and displaying the current
+        users private lessons
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - experience
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/genre/:
+    get:
+      operationId: genre_list
+      description: A simple ViewSet for viewing the list of genres
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - genre
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGenreList'
+          description: ''
+  /api/genre/{uid}/:
+    get:
+      operationId: genre_retrieve
+      description: A simple ViewSet for viewing the list of genres
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - genre
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Genre'
+          description: ''
+  /api/instrument/:
+    get:
+      operationId: instrument_list
+      description: A simple ViewSet for viewing the list of instruments
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - instrument
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedInstrumentList'
+          description: ''
+  /api/instrument/{uid}/:
+    get:
+      operationId: instrument_retrieve
+      description: A simple ViewSet for viewing the list of instruments
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - instrument
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Instrument'
+          description: ''
+  /api/invite/email:
+    post:
+      operationId: invite_email_create
+      description: View for sending out an invite mail to another user
+      tags:
+      - invite
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InviteFriend'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/InviteFriend'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InviteFriend'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/lesson-level/:
+    get:
+      operationId: lesson_level_list
+      description: A simple ViewSet for viewing the different Lesson Levels
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - lesson-level
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedLessonTypeList'
+          description: ''
+  /api/lesson-level/{uid}/:
+    get:
+      operationId: lesson_level_retrieve
+      description: A simple ViewSet for viewing the different Lesson Levels
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - lesson-level
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LessonType'
+          description: ''
+  /api/lesson-type/:
+    get:
+      operationId: lesson_type_list
+      description: A simple ViewSet for viewing the different Lesson Types
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - lesson-type
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedLessonTypeList'
+          description: ''
+  /api/lesson-type/{uid}/:
+    get:
+      operationId: lesson_type_retrieve
+      description: A simple ViewSet for viewing the different Lesson Types
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - lesson-type
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LessonType'
+          description: ''
+  /api/locations/private/:
+    get:
+      operationId: locations_private_list
+      description: Lists all locations owned by the current user
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - locations
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPrivateLocationList'
+          description: ''
+    post:
+      operationId: locations_private_create
+      description: Creates a new location
+      tags:
+      - locations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrivateLocation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PrivateLocation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PrivateLocation'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLocation'
+          description: ''
+  /api/locations/private/{uid}/:
+    get:
+      operationId: locations_private_retrieve
+      description: Retrieves a certain location owned by the current user
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - locations
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateLocation'
+          description: ''
+    delete:
+      operationId: locations_private_destroy
+      description: Deletes a certain location from the current user (will currently
+        fail if location is already in use)
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - locations
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/locations/public:
+    get:
+      operationId: locations_public_retrieve
+      description: A View for retrieving publicly available Locations by UID
+      tags:
+      - locations
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicLocation'
+          description: ''
+  /api/password-reset/:
+    post:
+      operationId: password_reset_create
+      description: |-
+        An Api View which provides a method to request a password reset token based on an e-mail address
+
+        Sends a signal reset_password_token_created when a reset token was created
+      tags:
+      - password-reset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Email'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Email'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Email'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Email'
+          description: ''
+  /api/password-reset/confirm/:
+    post:
+      operationId: password_reset_confirm_create
+      description: An Api View which provides a method to reset a password based on
+        a unique token
+      tags:
+      - password-reset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordToken'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PasswordToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordToken'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordToken'
+          description: ''
+  /api/password-reset/validate_token/:
+    post:
+      operationId: password_reset_validate_token_create
+      description: An Api View which provides a method to verify that a token is valid
+      tags:
+      - password-reset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResetToken'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ResetToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ResetToken'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResetToken'
+          description: ''
+  /api/payment-method/:
+    get:
+      operationId: payment_method_list
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - payment-method
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPaymentMethodList'
+          description: ''
+  /api/payment-method/{id}/:
+    get:
+      operationId: payment_method_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - payment-method
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentMethod'
+          description: ''
+  /api/payment-method/create_intent/:
+    post:
+      operationId: payment_method_create_intent_create
+      tags:
+      - payment-method
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentMethod'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PaymentMethod'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PaymentMethod'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSetupIntent'
+          description: ''
+  /api/pending-applications/:
+    get:
+      operationId: pending_applications_list
+      description: A Viewset for viewing and accepting Pending Teacher Applications
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - pending-applications
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTeacherApplicationList'
+          description: ''
+  /api/pending-applications/{uid}/:
+    get:
+      operationId: pending_applications_retrieve
+      description: A Viewset for viewing and accepting Pending Teacher Applications
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - pending-applications
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeacherApplication'
+          description: ''
+  /api/pending-applications/{uid}/accept/:
+    post:
+      operationId: pending_applications_accept_create
+      description: Accepts this teacher application
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - pending-applications
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/pending-applications/{uid}/decline/:
+    post:
+      operationId: pending_applications_decline_create
+      description: Rejects this teacher application
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - pending-applications
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TeacherApplication'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/request-verify/email:
+    post:
+      operationId: request_verify_email_create
+      description: View for requesting current email address to be verified
+      tags:
+      - request-verify
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          description: No response body
+  /api/review/:
+    get:
+      operationId: review_list
+      description: A viewset for viewing, updating, adding and deleting Experience
+        Reviews by Customers
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - review
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedExperienceCustomerReviewList'
+          description: ''
+    post:
+      operationId: review_create
+      description: A viewset for viewing, updating, adding and deleting Experience
+        Reviews by Customers
+      tags:
+      - review
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExperienceCustomerReview'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ExperienceCustomerReview'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ExperienceCustomerReview'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExperienceCustomerReview'
+          description: ''
+  /api/review/{uid}/:
+    get:
+      operationId: review_retrieve
+      description: A viewset for viewing, updating, adding and deleting Experience
+        Reviews by Customers
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - review
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExperienceCustomerReview'
+          description: ''
+    put:
+      operationId: review_update
+      description: A viewset for viewing, updating, adding and deleting Experience
+        Reviews by Customers
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - review
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExperienceCustomerReview'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ExperienceCustomerReview'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ExperienceCustomerReview'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExperienceCustomerReview'
+          description: ''
+    patch:
+      operationId: review_partial_update
+      description: A viewset for viewing, updating, adding and deleting Experience
+        Reviews by Customers
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - review
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedExperienceCustomerReview'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedExperienceCustomerReview'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedExperienceCustomerReview'
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExperienceCustomerReview'
+          description: ''
+    delete:
+      operationId: review_destroy
+      description: A viewset for viewing, updating, adding and deleting Experience
+        Reviews by Customers
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - review
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/send-verification-email:
+    post:
+      operationId: send_verification_email_create
+      tags:
+      - send-verification-email
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendVerificationEmailResponse'
+          description: ''
+  /api/social-auth/apple/:
+    post:
+      operationId: social_auth_apple_create
+      description: |-
+        POST with "user"
+
+        Send a user object returned from apple to get user information
+      tags:
+      - social-auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppleSocialAuth'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AppleSocialAuth'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AppleSocialAuth'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            text/html:
+              schema:
+                $ref: '#/components/schemas/AppleSocialAuth'
+          description: ''
+  /api/social-auth/facebook/:
+    post:
+      operationId: social_auth_facebook_create
+      description: |-
+        POST with "auth_token"
+
+        Send an access token as from facebook to get user information
+      tags:
+      - social-auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FacebookSocialAuth'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FacebookSocialAuth'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FacebookSocialAuth'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FacebookSocialAuth'
+          description: ''
+  /api/social-auth/google/:
+    post:
+      operationId: social_auth_google_create
+      description: |-
+        POST with "auth_token"
+
+        Send an idtoken as from google to get user information
+      tags:
+      - social-auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GoogleSocialAuth'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GoogleSocialAuth'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GoogleSocialAuth'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GoogleSocialAuth'
+          description: ''
+  /api/social-auth/spotify/:
+    post:
+      operationId: social_auth_spotify_create
+      description: |-
+        POST with "auth_token"
+
+        Send an idtoken as from spotify to get user information
+      tags:
+      - social-auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpotifyAuth'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SpotifyAuth'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SpotifyAuth'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpotifyAuth'
+          description: ''
+  /api/stripe/connect/:
+    get:
+      operationId: stripe_connect_retrieve
+      description: Returns the url to the Stripe dashboard if a connected account
+        exists
+      tags:
+      - stripe
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StripeAccountDashboard'
+          description: ''
+  /api/stripe/connect/payout/:
+    get:
+      operationId: stripe_connect_payout_list
+      description: Returns a list of external accounts
+      tags:
+      - stripe
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StripeExternalAccount'
+          description: ''
+  /api/stripe/connect/start/:
+    post:
+      operationId: stripe_connect_start_create
+      description: Return a link to stripe on-boarding process
+      tags:
+      - stripe
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountLinks'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AccountLinks'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AccountLinks'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountLinks'
+          description: ''
+  /api/teacher:
+    get:
+      operationId: teacher_retrieve
+      description: A simple ViewSet for viewing and editing the current users teacher
+        related informations
+      tags:
+      - teacher
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+    put:
+      operationId: teacher_update
+      description: A simple ViewSet for viewing and editing the current users teacher
+        related informations
+      tags:
+      - teacher
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+    patch:
+      operationId: teacher_partial_update
+      description: A simple ViewSet for viewing and editing the current users teacher
+        related informations
+      tags:
+      - teacher
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTeacher'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTeacher'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTeacher'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+  /api/timeslots/own/:
+    get:
+      operationId: timeslots_own_list
+      description: A viewset for managing a teachers time slots
+      tags:
+      - timeslots
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeSlot'
+          description: ''
+    post:
+      operationId: timeslots_own_create
+      description: A viewset for managing a teachers time slots
+      tags:
+      - timeslots
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeSlot'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TimeSlot'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TimeSlot'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeSlot'
+          description: ''
+  /api/timeslots/own/{uid}/:
+    get:
+      operationId: timeslots_own_retrieve
+      description: A viewset for managing a teachers time slots
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - timeslots
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeSlot'
+          description: ''
+    delete:
+      operationId: timeslots_own_destroy
+      description: A viewset for managing a teachers time slots
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+          title: Public id
+        required: true
+      tags:
+      - timeslots
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/token/create:
+    post:
+      operationId: token_create_create
+      description: |-
+        Takes a set of user credentials and returns an access and refresh JSON web
+        token pair to prove the authentication of those credentials.
+      tags:
+      - token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenPairResponse'
+          description: ''
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+          description: ''
+  /api/token/refresh:
+    post:
+      operationId: token_refresh_create
+      description: |-
+        Takes a refresh type JSON web token and returns an access type JSON web
+        token if the refresh token is valid.
+      tags:
+      - token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefreshResponse'
+          description: ''
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+          description: ''
+  /api/token/verify:
+    post:
+      operationId: token_verify_create
+      description: |-
+        Takes a token and indicates if it is valid.  This view provides no
+        information about a token's fitness for a particular use.
+      tags:
+      - token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenVerifyResponse'
+          description: ''
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+          description: ''
+  /api/user/{id}/:
+    get:
+      operationId: user_retrieve
+      description: A ViewSet for retrieving or interacting with other users
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this user.
+        required: true
+      tags:
+      - user
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateUser'
+          description: ''
+  /api/user/me:
+    get:
+      operationId: user_me_retrieve
+      description: Retrieves the current user account
+      tags:
+      - user
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateUser'
+          description: ''
+    post:
+      operationId: user_me_create
+      description: Creates a new user account
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCreate'
+          description: ''
+    patch:
+      operationId: user_me_partial_update
+      description: Performs a partial update of the current user account
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPrivateUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPrivateUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPrivateUser'
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateUser'
+          description: ''
+  /api/user/me/profile:
+    get:
+      operationId: user_me_profile_retrieve
+      description: Retrieves the current user profile
+      tags:
+      - user
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+    post:
+      operationId: user_me_profile_create
+      description: Creates a new user profile
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+    patch:
+      operationId: user_me_profile_partial_update
+      description: Performs a partial update of the current user profile
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+components:
+  schemas:
+    AccountLinks:
+      type: object
+      properties:
+        url:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        expires_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created
+      - expires_at
+      - url
+    AddContactRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        firstname:
+          type: string
+      required:
+      - email
+      - firstname
+    AgeGroup:
+      type: object
+      description: Serializer for Age Groups (Kids, Adult)
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        name:
+          type: string
+          maxLength: 32
+        icon:
+          type: string
+          format: uri
+          nullable: true
+      required:
+      - name
+    AppleSocialAuth:
+      type: object
+      properties:
+        id_token:
+          type: string
+      required:
+      - id_token
+    AuthError:
+      type: object
+      properties:
+        detail:
+          type: string
+        code:
+          type: string
+      required:
+      - code
+      - detail
+    Banner:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        experience:
+          type: string
+        image:
+          type: string
+          format: uri
+      required:
+      - image
+      - uid
+    BlankEnum:
+      enum:
+      - ''
+    CreateSetupIntent:
+      type: object
+      properties:
+        customer_secret:
+          type: string
+      required:
+      - customer_secret
+    CustomerAddress:
+      type: object
+      properties:
+        city:
+          type: string
+        country:
+          type: string
+        line1:
+          type: string
+        line2:
+          type: string
+        postal_code:
+          type: string
+        state:
+          type: string
+      required:
+      - city
+      - country
+      - line1
+      - line2
+      - postal_code
+      - state
+    Email:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+      required:
+      - email
+    EmailVerification:
+      type: object
+      properties:
+        token:
+          type: string
+          maxLength: 555
+      required:
+      - token
+    Experience:
+      type: object
+      description: Base Read-Only Class for Serializing Experiences
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        title:
+          type: string
+          readOnly: true
+          title: Titel
+        description:
+          type: string
+          readOnly: true
+          title: Beschreibung
+        banner:
+          allOf:
+          - $ref: '#/components/schemas/Banner'
+          readOnly: true
+        gallery:
+          type: array
+          items:
+            $ref: '#/components/schemas/GalleryImage'
+          readOnly: true
+        reviews:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExperienceCustomerReview'
+          readOnly: true
+        avg_review_score:
+          type: number
+          format: float
+          readOnly: true
+        owner:
+          type: string
+          format: uuid
+          readOnly: true
+      required:
+      - avg_review_score
+      - banner
+      - description
+      - gallery
+      - owner
+      - reviews
+      - title
+      - uid
+    ExperienceCustomerReview:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        experience:
+          type: string
+        author:
+          type: string
+          format: uuid
+          readOnly: true
+        text:
+          type: string
+          title: Review text
+          maxLength: 255
+        score_content:
+          type: integer
+          maximum: 5
+          minimum: 1
+          title: Content score
+        score_social:
+          type: integer
+          maximum: 5
+          minimum: 1
+          title: Social score
+        score_scheduling:
+          type: integer
+          maximum: 5
+          minimum: 1
+          title: Scheduling score
+        score_location:
+          type: integer
+          maximum: 5
+          minimum: 1
+          nullable: true
+          title: Location score
+        avg_score:
+          type: number
+          format: float
+          readOnly: true
+      required:
+      - author
+      - avg_score
+      - experience
+      - score_content
+      - score_scheduling
+      - score_social
+      - uid
+    FacebookSocialAuth:
+      type: object
+      description: Handles serialization of facebook related data
+      properties:
+        auth_token:
+          type: string
+      required:
+      - auth_token
+    GalleryImage:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        experience:
+          type: string
+        image:
+          type: string
+          format: uri
+      required:
+      - image
+    Genre:
+      type: object
+      description: Serializer of Music Genres
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        name:
+          type: string
+          maxLength: 32
+        icon:
+          type: string
+          format: uri
+          nullable: true
+      required:
+      - name
+    GoogleSocialAuth:
+      type: object
+      properties:
+        auth_token:
+          type: string
+      required:
+      - auth_token
+    GroupLesson:
+      type: object
+      description: Base Read-Only Class for Serializing Experiences
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        owner:
+          $ref: '#/components/schemas/PublicUser'
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupLessonGroup'
+          readOnly: true
+        title:
+          type: string
+          readOnly: true
+          title: Titel
+        description:
+          type: string
+          readOnly: true
+          title: Beschreibung
+        age_group:
+          type: integer
+          readOnly: true
+          nullable: true
+        instrument:
+          allOf:
+          - $ref: '#/components/schemas/Instrument'
+          readOnly: true
+        genre:
+          allOf:
+          - $ref: '#/components/schemas/Genre'
+          readOnly: true
+        lesson_level:
+          allOf:
+          - $ref: '#/components/schemas/LessonLevel'
+          readOnly: true
+        reviews:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExperienceCustomerReview'
+          readOnly: true
+        avg_review_score:
+          type: number
+          format: float
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of creation
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of last modification
+      required:
+      - age_group
+      - avg_review_score
+      - created
+      - description
+      - genre
+      - groups
+      - instrument
+      - lesson_level
+      - modified
+      - owner
+      - reviews
+      - title
+      - uid
+    GroupLessonCreate:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupLessonGroupCreate'
+        title:
+          type: string
+          title: Titel
+          maxLength: 128
+        description:
+          type: string
+          title: Beschreibung
+          maxLength: 4096
+        age_group:
+          type: string
+        instrument:
+          type: string
+        genre:
+          type: string
+          nullable: true
+        lesson_level:
+          type: string
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of creation
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of last modification
+        accept_tos:
+          type: boolean
+      required:
+      - accept_tos
+      - age_group
+      - created
+      - description
+      - groups
+      - instrument
+      - lesson_level
+      - modified
+      - title
+    GroupLessonGroup:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        title:
+          type: string
+          maxLength: 512
+        base_unit_amount:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        subscription_types:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupLessonSubscriptionType'
+          readOnly: true
+        time_slot_booking:
+          allOf:
+          - $ref: '#/components/schemas/TimeSlotBooking'
+          readOnly: true
+        location:
+          allOf:
+          - $ref: '#/components/schemas/PublicLocation'
+          readOnly: true
+        for_kids:
+          type: boolean
+        online:
+          type: boolean
+        offline:
+          type: boolean
+      required:
+      - base_unit_amount
+      - location
+      - subscription_types
+      - time_slot_booking
+      - title
+    GroupLessonGroupCreate:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        title:
+          type: string
+          maxLength: 512
+        base_unit_amount:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        subscription_types:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionIntervalsEnum'
+        n_students_min:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Minimum Number of Students
+        n_students_max:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Minimum Number of Students
+        time_slot:
+          type: string
+        location:
+          type: string
+        period:
+          allOf:
+          - $ref: '#/components/schemas/PeriodEnum'
+          minimum: -2147483648
+          maximum: 2147483647
+        for_kids:
+          type: boolean
+        online:
+          type: boolean
+        offline:
+          type: boolean
+      required:
+      - base_unit_amount
+      - location
+      - n_students_max
+      - period
+      - subscription_types
+      - time_slot
+      - title
+    GroupLessonSubscriptionType:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        monthly_amount:
+          type: integer
+          readOnly: true
+        fee_amount:
+          type: integer
+          readOnly: true
+        interval_count:
+          allOf:
+          - $ref: '#/components/schemas/SubscriptionIntervalsEnum'
+          readOnly: true
+          title: Numbers of months between payments
+        discount_percent:
+          type: integer
+          readOnly: true
+          title: Size of discount
+      required:
+      - discount_percent
+      - fee_amount
+      - interval_count
+      - monthly_amount
+      - uid
+    Instrument:
+      type: object
+      description: Serializer for Instruments
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        name:
+          type: string
+          maxLength: 32
+        icon:
+          type: string
+          format: uri
+          nullable: true
+      required:
+      - name
+    InviteFriend:
+      type: object
+      properties:
+        emails:
+          type: array
+          items: {}
+      required:
+      - emails
+    LessonLevel:
+      type: object
+      description: Serializer for Lesson Levels (Beginner, Intermediate, Expert)
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        name:
+          type: string
+          maxLength: 32
+        icon:
+          type: string
+          format: uri
+          nullable: true
+      required:
+      - name
+    LessonType:
+      type: object
+      description: Serializer for Lesson Types (Single, Group, etc...)
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        name:
+          type: string
+          maxLength: 32
+        icon:
+          type: string
+          format: uri
+          nullable: true
+      required:
+      - name
+    NullEnum:
+      enum:
+      - null
+    PaginatedAgeGroupList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AgeGroup'
+    PaginatedExperienceCustomerReviewList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExperienceCustomerReview'
+    PaginatedGalleryImageList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/GalleryImage'
+    PaginatedGenreList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Genre'
+    PaginatedGroupLessonList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupLesson'
+    PaginatedInstrumentList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Instrument'
+    PaginatedLessonTypeList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/LessonType'
+    PaginatedPaymentMethodList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentMethod'
+    PaginatedPolymorphicBookingList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PolymorphicBooking'
+    PaginatedPolymorphicExperienceList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PolymorphicExperience'
+    PaginatedPrivateLessonBookingList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrivateLessonBooking'
+    PaginatedPrivateLessonList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrivateLesson'
+    PaginatedPrivateLocationList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrivateLocation'
+    PaginatedTeacherApplicationList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/TeacherApplication'
+    PasswordToken:
+      type: object
+      properties:
+        password:
+          type: string
+        token:
+          type: string
+      required:
+      - password
+      - token
+    PatchedExperienceCustomerReview:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        experience:
+          type: string
+        author:
+          type: string
+          format: uuid
+          readOnly: true
+        text:
+          type: string
+          title: Review text
+          maxLength: 255
+        score_content:
+          type: integer
+          maximum: 5
+          minimum: 1
+          title: Content score
+        score_social:
+          type: integer
+          maximum: 5
+          minimum: 1
+          title: Social score
+        score_scheduling:
+          type: integer
+          maximum: 5
+          minimum: 1
+          title: Scheduling score
+        score_location:
+          type: integer
+          maximum: 5
+          minimum: 1
+          nullable: true
+          title: Location score
+        avg_score:
+          type: number
+          format: float
+          readOnly: true
+    PatchedGroupLesson:
+      type: object
+      description: Base Read-Only Class for Serializing Experiences
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        owner:
+          $ref: '#/components/schemas/PublicUser'
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupLessonGroup'
+          readOnly: true
+        title:
+          type: string
+          readOnly: true
+          title: Titel
+        description:
+          type: string
+          readOnly: true
+          title: Beschreibung
+        age_group:
+          type: integer
+          readOnly: true
+          nullable: true
+        instrument:
+          allOf:
+          - $ref: '#/components/schemas/Instrument'
+          readOnly: true
+        genre:
+          allOf:
+          - $ref: '#/components/schemas/Genre'
+          readOnly: true
+        lesson_level:
+          allOf:
+          - $ref: '#/components/schemas/LessonLevel'
+          readOnly: true
+        reviews:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExperienceCustomerReview'
+          readOnly: true
+        avg_review_score:
+          type: number
+          format: float
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of creation
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of last modification
+    PatchedPrivateLesson:
+      type: object
+      description: Base Read-Only Class for Serializing Experiences
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        owner:
+          $ref: '#/components/schemas/PublicUser'
+        title:
+          type: string
+          title: Titel
+          maxLength: 128
+        description:
+          type: string
+          title: Beschreibung
+          maxLength: 4096
+        banner:
+          allOf:
+          - $ref: '#/components/schemas/Banner'
+          readOnly: true
+        for_kids:
+          type: boolean
+          readOnly: true
+        at_home:
+          type: boolean
+          readOnly: true
+        online:
+          type: boolean
+          readOnly: true
+        offline:
+          type: boolean
+          readOnly: true
+        age_group:
+          type: integer
+          readOnly: true
+          nullable: true
+        instrument:
+          allOf:
+          - $ref: '#/components/schemas/Instrument'
+          readOnly: true
+        genre:
+          allOf:
+          - $ref: '#/components/schemas/Genre'
+          readOnly: true
+        lesson_level:
+          allOf:
+          - $ref: '#/components/schemas/LessonLevel'
+          readOnly: true
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/PublicLocation'
+          readOnly: true
+        base_unit_amount:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        time_slots:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSlot'
+          readOnly: true
+        gallery:
+          type: array
+          items:
+            $ref: '#/components/schemas/GalleryImage'
+          readOnly: true
+        subscription_types:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrivateSubscriptionType'
+          readOnly: true
+        reviews:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExperienceCustomerReview'
+          readOnly: true
+        avg_review_score:
+          type: number
+          format: float
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of creation
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of last modification
+    PatchedPrivateUser:
+      type: object
+      description: Serializer for User Models
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        is_verified:
+          type: boolean
+          readOnly: true
+          title: User was verified (either by email or phone)
+        is_teacher:
+          type: boolean
+          readOnly: true
+        is_super_teacher:
+          type: boolean
+          readOnly: true
+    PatchedTeacher:
+      type: object
+      description: Serializer for Teacher
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrivateLocation'
+    PatchedUserProfile:
+      type: object
+      description: Serializer for User Profile Information
+      properties:
+        first_name:
+          type: string
+          maxLength: 255
+        last_name:
+          type: string
+          maxLength: 255
+        address:
+          allOf:
+          - $ref: '#/components/schemas/CustomerAddress'
+          nullable: true
+        avatar:
+          type: string
+          format: uri
+          nullable: true
+        user_type:
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/UserTypeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        birthday:
+          type: string
+          format: date
+          nullable: true
+        gender:
+          type: string
+          nullable: true
+          maxLength: 64
+        about:
+          type: string
+          nullable: true
+          maxLength: 246
+        instruments:
+          type: array
+          items:
+            type: integer
+        favourite_genres:
+          type: array
+          items:
+            type: integer
+    PaymentMethod:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        type:
+          allOf:
+          - $ref: '#/components/schemas/PaymentMethodTypeEnum'
+          readOnly: true
+          description: The type of the PaymentMethod.
+        card:
+          type: object
+          additionalProperties: {}
+          readOnly: true
+          nullable: true
+          description: Additional information for payment methods of type `card`
+        billing_details:
+          type: object
+          additionalProperties: {}
+          readOnly: true
+          description: Billing information associated with the PaymentMethod that
+            may be used or required by particular types of payment methods.
+      required:
+      - billing_details
+      - card
+      - id
+      - type
+    PaymentMethodTypeEnum:
+      enum:
+      - acss_debit
+      - afterpay_clearpay
+      - alipay
+      - au_becs_debit
+      - bacs_debit
+      - bancontact
+      - boleto
+      - card
+      - card_present
+      - eps
+      - fpx
+      - giropay
+      - grabpay
+      - ideal
+      - interac_present
+      - klarna
+      - oxxo
+      - p24
+      - sepa_debit
+      - sofort
+      - wechat_pay
+      type: string
+    PeriodEnum:
+      enum:
+      - 2
+      - 4
+      type: integer
+    PolymorphicBooking:
+      oneOf:
+      - $ref: '#/components/schemas/PrivateLessonBooking'
+      discriminator:
+        propertyName: resourcetype
+        mapping:
+          PrivateLessonBooking: '#/components/schemas/PrivateLessonBooking'
+    PolymorphicExperience:
+      oneOf:
+      - $ref: '#/components/schemas/Experience'
+      - $ref: '#/components/schemas/PrivateLesson'
+      discriminator:
+        propertyName: experience_type
+        mapping:
+          Experience: '#/components/schemas/Experience'
+          PrivateLesson: '#/components/schemas/PrivateLesson'
+    PrivateLesson:
+      type: object
+      description: Base Read-Only Class for Serializing Experiences
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        owner:
+          $ref: '#/components/schemas/PublicUser'
+        title:
+          type: string
+          title: Titel
+          maxLength: 128
+        description:
+          type: string
+          title: Beschreibung
+          maxLength: 4096
+        banner:
+          allOf:
+          - $ref: '#/components/schemas/Banner'
+          readOnly: true
+        for_kids:
+          type: boolean
+          readOnly: true
+        at_home:
+          type: boolean
+          readOnly: true
+        online:
+          type: boolean
+          readOnly: true
+        offline:
+          type: boolean
+          readOnly: true
+        age_group:
+          type: integer
+          readOnly: true
+          nullable: true
+        instrument:
+          allOf:
+          - $ref: '#/components/schemas/Instrument'
+          readOnly: true
+        genre:
+          allOf:
+          - $ref: '#/components/schemas/Genre'
+          readOnly: true
+        lesson_level:
+          allOf:
+          - $ref: '#/components/schemas/LessonLevel'
+          readOnly: true
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/PublicLocation'
+          readOnly: true
+        base_unit_amount:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        time_slots:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSlot'
+          readOnly: true
+        gallery:
+          type: array
+          items:
+            $ref: '#/components/schemas/GalleryImage'
+          readOnly: true
+        subscription_types:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrivateSubscriptionType'
+          readOnly: true
+        reviews:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExperienceCustomerReview'
+          readOnly: true
+        avg_review_score:
+          type: number
+          format: float
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of creation
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of last modification
+      required:
+      - age_group
+      - at_home
+      - avg_review_score
+      - banner
+      - base_unit_amount
+      - created
+      - description
+      - for_kids
+      - gallery
+      - genre
+      - instrument
+      - lesson_level
+      - locations
+      - modified
+      - offline
+      - online
+      - owner
+      - reviews
+      - subscription_types
+      - time_slots
+      - title
+      - uid
+    PrivateLessonBooking:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        state:
+          type: string
+          readOnly: true
+        teacher:
+          type: string
+          format: uuid
+          readOnly: true
+        lesson:
+          type: string
+          format: uuid
+          readOnly: true
+        location:
+          type: string
+        payment_method:
+          type: string
+        subscription_type:
+          type: string
+        stripe_subscription:
+          type: integer
+          title: ID
+          readOnly: true
+          nullable: true
+        time_slot_bookings:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSlotBooking'
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of cration
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of last modification
+        started:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          description: Timestamp of beginning of booking
+        last_charged:
+          type: string
+          format: date
+          readOnly: true
+          nullable: true
+          description: Timestamp of latest processed charge
+      required:
+      - created
+      - last_charged
+      - lesson
+      - location
+      - modified
+      - payment_method
+      - started
+      - state
+      - stripe_subscription
+      - subscription_type
+      - teacher
+      - time_slot_bookings
+      - uid
+    PrivateLessonCreate:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        title:
+          type: string
+          title: Titel
+          maxLength: 128
+        description:
+          type: string
+          title: Beschreibung
+          maxLength: 4096
+        banner:
+          type: string
+        for_kids:
+          type: boolean
+        at_home:
+          type: boolean
+        online:
+          type: boolean
+        offline:
+          type: boolean
+        age_group:
+          type: string
+        instrument:
+          type: string
+        genre:
+          type: string
+          nullable: true
+        lesson_level:
+          type: string
+        subscription_types:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionIntervalsEnum'
+        base_unit_amount:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        time_slots:
+          type: array
+          items:
+            type: string
+        gallery:
+          type: array
+          items:
+            type: string
+        locations:
+          type: array
+          items:
+            type: string
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of creation
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Timestamp of last modification
+        accept_tos:
+          type: boolean
+      required:
+      - accept_tos
+      - age_group
+      - base_unit_amount
+      - created
+      - description
+      - instrument
+      - lesson_level
+      - locations
+      - modified
+      - subscription_types
+      - time_slots
+      - title
+    PrivateLocation:
+      type: object
+      description: Serializer for Locations
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        name:
+          type: string
+          maxLength: 32
+        address:
+          type: string
+          maxLength: 128
+        coordinates:
+          type: object
+          properties:
+            type:
+              type: string
+            coordinates:
+              type: array
+              items:
+                type: number
+                format: double
+              minItems: 2
+              maxItems: 2
+          readOnly: true
+      required:
+      - address
+      - coordinates
+      - name
+      - uid
+    PrivateSubscriptionType:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        active:
+          type: boolean
+        discount_percent:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+          title: Size of discount
+        interval_count:
+          allOf:
+          - $ref: '#/components/schemas/SubscriptionIntervalsEnum'
+          title: Numbers of months between payments
+          minimum: 0
+          maximum: 32767
+      required:
+      - discount_percent
+      - interval_count
+    PrivateUser:
+      type: object
+      description: Serializer for User Models
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        is_verified:
+          type: boolean
+          readOnly: true
+          title: User was verified (either by email or phone)
+        is_teacher:
+          type: boolean
+          readOnly: true
+        is_super_teacher:
+          type: boolean
+          readOnly: true
+      required:
+      - email
+      - id
+      - is_super_teacher
+      - is_teacher
+      - is_verified
+    PublicLocation:
+      type: object
+      description: Public view of Locations
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        name:
+          type: string
+          readOnly: true
+        coordinates:
+          type: object
+          properties:
+            type:
+              type: string
+            coordinates:
+              type: array
+              items:
+                type: number
+                format: double
+              minItems: 2
+              maxItems: 2
+          readOnly: true
+      required:
+      - coordinates
+      - name
+      - uid
+    PublicUser:
+      type: object
+      description: Serializer for displaying an users information
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        profile:
+          allOf:
+          - $ref: '#/components/schemas/UserProfile'
+          readOnly: true
+        is_teacher:
+          type: boolean
+          readOnly: true
+        is_super_teacher:
+          type: boolean
+          readOnly: true
+      required:
+      - id
+      - is_super_teacher
+      - is_teacher
+      - profile
+    ResetToken:
+      type: object
+      properties:
+        token:
+          type: string
+      required:
+      - token
+    SendVerificationEmailResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+      required:
+      - message
+      - success
+    SpotifyAuth:
+      type: object
+      description: Handles serialization of Spotipy related data
+      properties:
+        auth_token:
+          type: string
+      required:
+      - auth_token
+    StripeAccountDashboard:
+      type: object
+      properties:
+        dashboard_url:
+          type: string
+          readOnly: true
+      required:
+      - dashboard_url
+    StripeExternalAccount:
+      type: object
+      properties:
+        name:
+          type: string
+          readOnly: true
+        type:
+          allOf:
+          - $ref: '#/components/schemas/StripeExternalAccountTypeEnum'
+          readOnly: true
+        last4:
+          type: string
+          readOnly: true
+        currency:
+          type: string
+          readOnly: true
+        is_default:
+          type: boolean
+          readOnly: true
+      required:
+      - currency
+      - is_default
+      - last4
+      - name
+      - type
+    StripeExternalAccountTypeEnum:
+      enum:
+      - bank_account
+      - card
+      type: string
+    SubscriptionIntervalsEnum:
+      enum:
+      - 1
+      - 3
+      - 6
+      - 12
+      type: integer
+    Teacher:
+      type: object
+      description: Serializer for Teacher
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrivateLocation'
+      required:
+      - id
+      - locations
+    TeacherApplication:
+      type: object
+      description: Serializer for Teacher Application
+      properties:
+        experience_instruments:
+          type: string
+          title: Wie lange spielst du das/die Instrumente, die du unterichten möchtest?
+          maxLength: 2048
+        experience_teaching:
+          type: string
+          title: Hast du bereits unterichtet und falls ja, wie lange?
+          maxLength: 2048
+        education_motivation:
+          type: string
+          title: Wie würdest du mit fehlender Motivation deiner Schüler umgehen?
+          maxLength: 2048
+        lesson_types:
+          type: array
+          items:
+            type: string
+        age_groups:
+          type: array
+          items:
+            type: string
+        instruments:
+          type: array
+          items:
+            type: string
+        lesson_levels:
+          type: array
+          items:
+            type: string
+      required:
+      - age_groups
+      - education_motivation
+      - experience_instruments
+      - experience_teaching
+      - instruments
+      - lesson_levels
+      - lesson_types
+    TimeSlot:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          title: Public id
+        start_date:
+          type: string
+          format: date
+          title: First Available Date
+        start_time:
+          type: string
+          format: time
+        period:
+          allOf:
+          - $ref: '#/components/schemas/PeriodEnum'
+          title: Period of recurrence
+          minimum: 0
+          maximum: 32767
+      required:
+      - period
+      - start_date
+      - start_time
+    TimeSlotBooking:
+      type: object
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+          title: Public id
+        active:
+          type: boolean
+          readOnly: true
+        time_slot:
+          type: string
+        period:
+          $ref: '#/components/schemas/PeriodEnum'
+        start_date:
+          type: string
+          format: date
+      required:
+      - active
+      - period
+      - start_date
+      - time_slot
+      - uid
+    TokenObtainPair:
+      type: object
+      properties:
+        email:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+      required:
+      - access
+      - email
+      - password
+      - refresh
+    TokenPairResponse:
+      type: object
+      properties:
+        access:
+          type: string
+        refresh:
+          type: string
+      required:
+      - access
+      - refresh
+    TokenRefresh:
+      type: object
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+      required:
+      - access
+      - refresh
+    TokenRefreshResponse:
+      type: object
+      properties:
+        refresh:
+          type: string
+      required:
+      - refresh
+    TokenVerify:
+      type: object
+      properties:
+        token:
+          type: string
+          writeOnly: true
+      required:
+      - token
+    TokenVerifyResponse:
+      type: object
+      properties:
+        token:
+          type: string
+      required:
+      - token
+    UserCreate:
+      type: object
+      description: Serializer for Creating User Models
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        password:
+          type: string
+          writeOnly: true
+        is_verified:
+          type: boolean
+          readOnly: true
+          title: User was verified (either by email or phone)
+      required:
+      - email
+      - id
+      - is_verified
+      - password
+    UserProfile:
+      type: object
+      description: Serializer for User Profile Information
+      properties:
+        first_name:
+          type: string
+          maxLength: 255
+        last_name:
+          type: string
+          maxLength: 255
+        address:
+          allOf:
+          - $ref: '#/components/schemas/CustomerAddress'
+          nullable: true
+        avatar:
+          type: string
+          format: uri
+          nullable: true
+        user_type:
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/UserTypeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        birthday:
+          type: string
+          format: date
+          nullable: true
+        gender:
+          type: string
+          nullable: true
+          maxLength: 64
+        about:
+          type: string
+          nullable: true
+          maxLength: 246
+        instruments:
+          type: array
+          items:
+            type: integer
+        favourite_genres:
+          type: array
+          items:
+            type: integer
+      required:
+      - favourite_genres
+      - first_name
+      - instruments
+      - last_name
+    UserTypeEnum:
+      enum:
+      - BEG
+      - HOB
+      - STU
+      - PRO
+      type: string
+  securitySchemes:
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

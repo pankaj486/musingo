@@ -1,0 +1,40 @@
+.networkModal {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0 2rem;
+  position: relative;
+  @media only screen and (min-width: 1025px) {
+    width: 50vw;
+  }
+}
+
+.networkSearchInput[placeholder] {
+  font-size: 18px !important;
+}
+
+.clearButton {
+  position: absolute;
+  left: 0;
+  top: 85px;
+  padding: 0 !important;
+}
+
+.networkForm {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.networkArrowNext {
+  @media only screen and (min-width: 1025px) {
+    top: 65% !important;
+    right: -60px !important;
+    outline: none;
+  }
+}
+.networkArrowPrev {
+  @media only screen and (min-width: 1025px) {
+    top: 65% !important;
+    left: -60px !important;
+    outline: none;
+  }
+}

@@ -1,0 +1,12 @@
+.requests {
+  width: 80%;
+  margin: 0 auto;
+  height: 381px;
+  overflow-y: scroll;
+  padding: 0 10px;
+}
+
+.requests.show-all {
+  overflow-y: scroll;
+  margin-bottom: 32px;
+}

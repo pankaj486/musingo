@@ -1,0 +1,42 @@
+.activeBorder {
+  border: 2px solid #888888 !important;
+}
+
+.applicationBox {
+  border-radius: 18px;
+  transition: border 0.25s;
+  &:hover {
+    border: 2px solid #888888 !important;
+  }
+}
+
+.applicationDesc{
+    max-height: 200px;
+    overflow-y: scroll;
+    padding-right: 1rem;
+}
+
+.applicationDesc::-webkit-scrollbar,
+.applicationDesc::-webkit-scrollbar {
+  width: 6px;
+}
+.applicationDesc::-webkit-scrollbar-thumb {
+  background: #ababab;
+  border-radius: 0;
+}
+.applicationDesc::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+.applicationDesc::-webkit-scrollbar-track {
+  scrollbar-color: #ededed transparent;
+}
+.applicationDesc::-webkit-scrollbar-thumb {
+  scrollbar-color: #ababab transparent;
+}
+.applicationDesc:hover::-webkit-scrollbar-thumb {
+  background-color: #ababab;
+}
+.applicationDesc::-webkit-scrollbar-thumb:hover,
+.applicationDesc::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}

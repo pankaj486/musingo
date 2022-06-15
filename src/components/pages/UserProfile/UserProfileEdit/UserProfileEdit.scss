@@ -1,0 +1,31 @@
+.edit-user-profile .user-profile__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.upload-cover-image-text {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.trainer-profile-edit-submit-cta {
+  margin: 0 0 0 auto;
+  width: 200px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #4ad9ca;
+  border-radius: 12px;
+}
+
+.trainer-profile-edit-submit-cta span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}

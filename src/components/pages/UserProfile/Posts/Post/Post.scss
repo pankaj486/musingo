@@ -1,0 +1,119 @@
+.trainer-post {
+  width: 48%;
+  border: 1px solid #9f9f9f;
+  margin-bottom: 16px;
+  border-radius: 16px;
+}
+
+.post__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #bcbcbc;
+}
+
+.header--posted-by {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.header--posted-by img {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+}
+
+.post-folgen {
+  border: 1px solid #4ad9ca;
+  border-radius: 8px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  padding: 4px 0;
+}
+
+.post-folgen span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #4ad9ca;
+  line-height: 1;
+
+}
+
+.header--post-time {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header--post-time p {
+  margin: 0;
+  color: #a3a2a2;
+  line-height: 1.2;
+  font-size: 13px;
+}
+
+.post__body {
+  padding: 24px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.post-name {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #fc5d68;
+  padding: 0 6px
+}
+
+.post-name span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.post-details {
+  width: 300px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.post-details p {
+  margin: 0;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .trainer-post {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post__header {
+    flex-direction: column;
+  }
+
+  .post-folgen {
+    margin-left: 16px;
+  }
+
+  .post-details {
+    width: 100%;
+  }
+}

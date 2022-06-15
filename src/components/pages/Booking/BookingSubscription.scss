@@ -1,0 +1,98 @@
+.booking-subscription__title {
+  display: block;
+  font-size: 15px;
+  color: #131313;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-subscription__description {
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-subscription__description--bold {
+  font-weight: bold;
+  color: #484848;
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-subscription {
+  //margin-left: -20px;
+  //margin-right: -20px;
+}
+
+.booking-subscription__options-wrapper {
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.booking-subscription__options-container {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  outline: 0 !important;
+}
+
+.booking-subscription__options-wrapper .swiper-button-next {
+  position: absolute;
+  right: -24px;
+  transform: translateY(-50%);
+}
+
+.booking-subscription__options-wrapper .swiper-button-prev {
+  position: absolute;
+  left: -20px;
+  transform: translateY(-50%);
+}
+
+.booking-subscription .swiper-button-next, .booking-subscription .swiper-button-prev {
+  @media screen and (max-width: 1200px) {
+    display: none !important;
+  }
+}
+
+.booking-subscription .booking-subscription--inactive-cta {
+  background-color: #bcbcbc !important;
+}
+
+.booking-subscription__info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.booking-subscription__info-icon-container {
+  margin-right: 14px;
+  line-height: 1;
+}
+
+.booking-subscription__info-icon-container img {
+  height: 70px;
+  width: 70px;
+}
+
+.booking-subscription__info-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.booking-subscription__info-description {
+  font-weight: normal;
+  margin-bottom: 0;
+  font-size: 14px;
+}

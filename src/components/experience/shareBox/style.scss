@@ -1,0 +1,124 @@
+.shareBox {}
+.shareBoxButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.shareBoxButtonsSingle {
+    padding: 15px 30px;
+    flex-basis: calc(90% / 3);
+    margin: 0 15px;
+    border-radius: 20px !important;
+    border-color: #6a6a6a !important;
+}
+.shareBoxButtonsSingleImg {
+    height: 40px;
+    width: auto;
+}
+
+.shareBoxItems {
+    margin-top: 50px;
+}
+
+.shareItemBox {
+    border: 1px solid #797979;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    margin-top: 30px;
+}
+.shareItemBoxHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.shareItemBoxHeaderLeft{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.shareItemBoxHeaderImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.shareItemBoxName {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+.shareItemBoxHeaderBtn {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+.shareItemBoxBodyImg {
+    width: 100%;
+    height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.shareItemBoxBodyMembers {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.shareItemMiniCard {    
+    border-radius: 12px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    background-color: #fff;
+    padding: 2px;
+    cursor: pointer;
+}
+.shareItemMiniCardImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+
+.shareItemMiniCardDesc {
+    font-size: 8px;
+    margin: 0;
+    padding: 10px;
+}
+
+.shareItemBoxEmojiItemImg {
+    height: 35px;
+    width: auto;
+}
+
+.shareItemBoxEmojiItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+.shareItemBoxFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+.shareItemBoxEmojiItemCount {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 12px;
+}

@@ -1,0 +1,225 @@
+.modal-body {
+  padding: 0 !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialBox {
+  background: white;
+  padding: 2rem 2.4rem;
+  border-radius: 1rem;
+  border-color: #f2f2f2;
+  flex: 1;
+  max-height: 94px;
+  cursor: pointer;
+  &:hover {
+    background: #e1fffb;
+  }
+  @media screen and (max-width: 1024px) {
+    border: 1px solid #d6d5d5 !important;
+  }
+}
+.register {
+  .modal-content {
+    border-radius: 46px !important;
+    border: none !important;
+  }
+}
+.login {
+  color: #fff;
+  padding: 2rem 0rem;
+  @media only screen and (max-width: 1024px) {
+    color: #5e5e5e;
+    padding: 0;
+  }
+}
+
+.pad-4 {
+  padding: 2rem;
+}
+
+.codeDigit {
+  border: 2px solid #4ad9ca !important;
+}
+
+.imageOption {
+  border: 3px solid #dfdddd;
+  border-radius: 21px;
+  padding: 1rem 0.5rem;
+  transition: border 0.25s;
+  &:hover {
+    border: 3px solid #4ad9ca;
+  }
+}
+.isProfileActive {
+  border: 3px solid #4ad9ca;
+}
+.modalBackground {
+  position: relative;
+}
+.passwordResetModal {
+  position: relative;
+  border: 3px solid #d6d5d5 !important;
+}
+.passwordReset {
+  color: #343a40 !important;
+  padding: 2rem 0rem;
+  @media only screen and (max-width: 1024px) {
+    padding: 0;
+  }
+}
+
+.modalText {
+  z-index: 2;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: white;
+}
+.modal {
+  color: gray;
+}
+.modal-backdrop.show {
+  background: white;
+  opacity: 0.8 !important;
+}
+
+@media screen and (min-width: 1025px) {
+  .modalBackground {
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000, $alpha: 0.2);
+      z-index: 1;
+      border-radius: 4rem;
+    }
+  }
+
+  .passwordResetModal {
+    border-radius: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .modalBackground,
+  .passwordResetModal {
+    height: 100vh;
+    justify-content: center;
+  }
+
+  .register {
+    .modal-content {
+      border-radius: 0 !important;
+    }
+  }
+
+  .modal-dialog {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  .modal-content {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0 !important;
+  }
+
+  .form-control {
+    padding: 1.5rem !important;
+    border: 0.5px solid black !important;
+    border-radius: 5px !important;
+  }
+  .divider {
+    background: #d6d4d4;
+  }
+}
+@media (min-width: 1025px) {
+  .modal-dialog {
+    max-width: 25rem !important;
+  }
+}
+@media (max-width: 1024px) {
+  .modal-dialog {
+    max-width: 100% !important;
+  }
+}
+
+.dynamicHeight {
+  // @media screen and (max-width: 768px) {
+
+  // }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    max-width: 570px;
+    height: 100vh;
+    margin: 0 96px;
+    justify-content: center !important;
+  }
+  @media screen and (max-width: 600px) {
+    max-width: 370px;
+    height: 100vh;
+    justify-content: space-around !important;
+  }
+}
+
+.firstModal {
+  background: none;
+  border-radius: 46px;
+  @media (max-width: 1024px) {
+    border-radius: 0;
+    display: flex;
+  }
+}
+
+.otherModal {
+  // border: 2px solid #d5d5d5;
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+}
+
+.digitInput {
+  width: 30px !important;
+  height: 50px !important;
+  @media (max-width: 1024px) {
+    min-width: 40px;
+  }
+}
+
+.formFieldHeight {
+  height: 50px !important;
+}
+
+.passwordResetPage {
+  height: 100vh;
+}
+
+.register .form-control,
+.btn {
+  border-radius: 9px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .register h2 {
+    font-size: 28px !important;
+  }
+
+  .register p {
+    font-size: 16px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .register input {
+    font-size: 16px !important;
+  }
+}

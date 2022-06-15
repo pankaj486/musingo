@@ -1,0 +1,28 @@
+.subscription-details {
+  border: calc(3px / 2) solid #d6d5d5;
+  padding: 20px 20px 8px 20px;
+  border-radius: 14px;
+  line-height: 1;
+}
+
+.subscription-details {
+  border: 2px solid #d6d5d5;
+  padding: 24px 20px 8px 20px;
+  border-radius: 14px;
+  line-height: 1;
+}
+
+.subscription span {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.subscription-period {
+  margin-bottom: 12px;
+}
+
+.subscription-period span {
+  font-weight: bold;
+  color: rgb(87, 87, 87);
+}
+

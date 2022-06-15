@@ -1,0 +1,90 @@
+.chat-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 120px;
+  max-height: 93vh;
+  padding-top: 20px;
+}
+
+.chat-layout > div {
+  width: 26%;
+  height: 540px;
+}
+
+.chat-layout .chat-history {
+  width: 44% !important;
+}
+
+.chat-layout .booking__about-experience {
+  width: 23%;
+}
+
+.chat-layout .empty-conversation {
+  width: 28%;
+}
+
+@media (max-width: 1260px) {
+  .chat-layout > div {
+    width: 28% !important;
+  }
+
+  .chat-layout .chat-history {
+    width: 44% !important;
+  }
+
+  .chat-layout .booking__about-experience {
+    width: 25% !important;
+  }
+
+  .chat-layout .empty-conversation {
+    width: 30% !important;
+  }
+
+}
+
+@media (max-width: 1160px) {
+  .chat-layout > div {
+    width: 32% !important;
+  }
+
+  .chat-layout .booking__about-experience {
+    width: 29% !important;
+  }
+
+  .chat-layout .empty-conversation {
+    width: 32% !important;
+  }
+
+  .chat-layout .chat-history {
+    width: 32% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .chat-layout {
+    display: block;
+    margin-top: 24px;
+  }
+
+  .chat-layout > div {
+    width: 46% !important;
+    height: 540px;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .chat-layout .chat-history, .chat-layout .empty-conversation, .chat-layout .booking__about-experience {
+    width: 46% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-layout > div {
+    width: 76% !important;
+  }
+
+  .chat-layout .chat-history, .chat-layout .empty-conversation, .chat-layout .booking__about-experience {
+    width: 72% !important;
+  }
+}

@@ -1,0 +1,227 @@
+.booking-instrument__title {
+  display: block;
+  font-size: 15px;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-instrument__description {
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-instrument__description--bold {
+  font-weight: bold;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.booking-instrument {
+  //margin-left: -20px;
+  //margin-right: -20px;
+}
+
+.booking-instrument__options-wrapper {
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.booking-instrument__options-container {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  outline: 0 !important;
+}
+
+.booking-instrument__options-wrapper .swiper-button-next {
+  position: absolute;
+  right: -24px;
+  transform: translateY(-50%);
+}
+
+.booking-instrument__options-wrapper .swiper-button-prev {
+  position: absolute;
+  left: -20px;
+  transform: translateY(-50%);
+}
+
+.booking-instrument .swiper-button-next,
+.booking-instrument .swiper-button-prev {
+  @media screen and (max-width: 1200px) {
+    display: none !important;
+  }
+}
+
+.booking-instrument .booking-instrument--inactive-cta {
+  background-color: #bcbcbc !important;
+}
+
+.booking-instrument__info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.booking-instrument__info-icon-container {
+  margin-right: 14px;
+  line-height: 1;
+}
+
+.booking-instrument__info-icon-container img {
+  height: 90px;
+  width: 90px;
+}
+
+.booking-instrument__info-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.booking-instrument__info-description {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.booking-instrument__options .bookingPackageTrainerExperience {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 30px;
+  padding: 7px;
+}
+
+.booking-instrument__options .swiperSlideItem {
+  border: 7px solid transparent;
+  border-radius: 43px;
+  transition: all 0.4s ease-in-out;
+}
+
+.booking-instrument__options .activePackage {
+  border: 7px solid #4ad9ca !important;
+  border-radius: 43px;
+}
+
+.booking-instrument__options .activePackage .packageBorder {
+  border: 1px solid transparent;
+}
+
+.booking-instrument__options .packageBorder {
+  // height: 23.5rem;
+}
+
+.booking-instrument__option-select {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #bcbcbc;
+  width: 160px;
+  border-radius: 8px;
+  height: 45px;
+  box-sizing: border-box;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.booking-instrument__option-select > div {
+  width: 80px;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.booking-instrument__option-select > div span {
+  color: #131313;
+  line-height: 1;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.booking-instrument__option-select .booking-instrument__option-active {
+  background-color: #4ad9ca;
+}
+
+.booking-instrument__option-select .booking-instrument__option-active span {
+  color: #fff;
+}
+
+.booking-instrument__look-at {
+  font-weight: bold;
+  color: #4ad9ca;
+  margin-top: 5px;
+  margin-bottom: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.booking-instrument__options--mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.booking-instrument__option--mobile {
+  width: 48%;
+  margin-right: 0;
+  margin-bottom: 16px;
+}
+
+.booking-instrument__option--mobile .packageBorder {
+  height: 330px;
+}
+
+.booking-instrument__package-container {
+  border: 8px solid transparent;
+  border-radius: 30px;
+}
+
+.booking-instrument__package-container.activePackage {
+  border-color: #4ad9ca;
+}
+
+.booking-instrument__package-container.activePackage .packageBorder {
+  border-radius: 25px;
+}
+
+.booking-instrument__package-container .packageContainer {
+  margin: 0 !important;
+  margin-top: calc(1px / 2) !important;
+  border-radius: 22px;
+}
+
+.booking-instrument__package-container .activePackage .packageContainer {
+  border-radius: 22px;
+}
+
+.booking-instrument__options-container .packageContainer {
+  // height: 48%;
+  // min-height: 48%;
+  // margin-top: calc(1px / 2);
+}

@@ -1,0 +1,90 @@
+.profile-trainer-details {
+  width: 30%;
+  height: 160px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+}
+
+.profile-trainer--info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-trainer--info img {
+  width: 36px;
+  height: 36px;
+  margin-right: 16px;
+}
+
+.profile-trainer--info span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.trainer-profile-edit-select-band-section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding-top: 12px;
+  height: 120px;
+  border: 1px solid #bcbcbc;
+  margin-top: 10px;
+  margin-left: 50px;
+  width: 220px;
+}
+
+input.trainer-profile-edit-band-section-input {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 16px;
+  outline: 0;
+  border: 1px solid #bcbcbc;
+  text-align: center;
+}
+
+.trainer-profile-edit-bands-container {
+  padding: 5px 0;
+  overflow-y: scroll;
+  height: 80px;
+}
+
+.trainer-profile-edit-bands-container::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+.trainer-profile-edit-bands-container::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+.trainer-profile-edit-bands-container .trainer-profile-edit-band {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #bcbcbc;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.trainer-profile-edit-bands-container .trainer-profile-edit-band:last-of-type {
+  margin-bottom: 0;
+}
+
+.trainer-profile-edit-band-image, .trainer-profile-edit-empty-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.trainer-profile-edit-band-name {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}

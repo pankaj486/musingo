@@ -1,0 +1,35 @@
+.posts-container {
+  width: 100%;
+  text-align: center;
+}
+
+.posts-container__title {
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  margin-top: 90px;
+}
+
+.posts {
+  position: relative;
+  padding: 0 20px;
+  width: calc(100% - 40px);
+  margin: 32px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.posts--load-more {
+  font-weight: bold;
+  color: #4ad9ca;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .posts {
+    padding: 0;
+    width: 100%;
+  }
+}

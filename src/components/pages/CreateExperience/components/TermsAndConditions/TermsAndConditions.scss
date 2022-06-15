@@ -1,0 +1,124 @@
+.terms-and-conditions-container {
+  //width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.terms-and-conditions__header {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+
+.terms-and-conditions__highlights-container {
+  width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.terms-and-conditions__highlights-container.has-border {
+  border: 3px solid #D6D5D5;
+  border-radius: 60px;
+  padding: 20px 0;
+}
+
+.terms-and-conditions__highlights ul {
+  width: 650px;
+  margin: 16px auto 48px auto;
+  text-align: left;
+}
+
+.terms-and-conditions__highlights span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.terms-and-conditions-container hr {
+  width: 300px;
+  background-color: #bcbcbc;
+  margin-bottom: 48px;
+}
+
+.accept-conditions-section {
+  margin-top: 24px;
+}
+
+.accept-conditions-section input {
+  display: none;
+}
+
+.accept-conditions-section .accept-conditions-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #bcbcbc;
+  background-color: transparent;
+  margin-right: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.accept-conditions-section span {
+  cursor: pointer;
+  text-align: left;
+  line-height: 1;
+}
+
+.accept-conditions-section .accept-conditions-checkbox svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -6px;
+  margin-left: -6px;
+  width: 12px;
+  height: 12px;
+}
+
+.terms-and-conditions-container .terms {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.accept-conditions-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accept-and-continue-cta {
+  width: 650px;
+  margin: 20px auto 20px auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .terms-and-conditions__highlights ul {
+    width: 90%;
+    //text-align: center;
+  }
+
+  .terms-and-conditions-container .terms {
+    width: 90%;
+  }
+
+  .accept-and-continue-cta {
+    width: 80%;
+  }
+
+  .terms-and-conditions__highlights-container {
+    width: 100%;
+    border: none !important;
+    padding: 0 !important;
+  }
+}

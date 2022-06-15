@@ -1,0 +1,147 @@
+.experience--empty-inbox {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  position: relative;
+  z-index: 1000;
+  border-radius: 60px;
+}
+
+.experience--empty-inbox + .about-experience-details {
+  display: none;
+}
+
+.booking-inquiries__experience {
+  border-radius: 60px;
+}
+
+.booking__about-experience {
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  height: 530px;
+  border-radius: 48px;
+}
+
+.booking__about-experience.chat {
+  border-radius: 60px;
+}
+
+.about-experience-details {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.about-experience-header {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h2.about-experience-title {
+  color: #fff;
+  font-weight: bold;
+}
+
+h3.about-experience-group {
+  color: #fff;
+  font-weight: normal !important;
+  margin-bottom: 24px;
+}
+
+p.about-experience-text {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.about-experience-lessons {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.about-experience-lessons-top {
+  display: flex;
+  justify-content: space-around;
+  line-height: 1;
+}
+
+.about-experience-lessons span {
+  color: #fff;
+  font-size: 13px;
+}
+
+.about-experience-lessons-bottom {
+  line-height: 1;
+}
+
+.about-experience-members {
+  margin-top: 20px;
+}
+
+.about-experience-members > span {
+  font-weight: bold;
+  color: #fff;
+}
+
+.about-experience-members {
+  margin-top: 20px;
+}
+
+.about-experience-members img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 3px solid #ffff;
+  display: inline-block;
+  position: relative;
+}
+
+.booking__about-experience.chat .about-experience-members img {
+  border: 4px solid #fff;
+}
+
+.about-experience-other-details {
+  margin-top: 16px;
+}
+
+.about-experience-other-details p {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.about-experience-other-details p:nth-of-type(1), .about-experience-other-details p:nth-of-type(3) {
+  font-weight: bold;
+}
+
+.about-experience-members img[imgcount='1'] {
+  z-index: 4;
+  right: 10px;
+  margin-left: 40px;
+}
+
+.about-experience-members img[imgcount='2'] {
+  z-index: 3;
+  right: 20px;
+}
+
+.about-experience-members img[imgcount='3'] {
+  z-index: 2;
+  right: 30px;
+}
+
+.about-experience-members img[imgcount='4'] {
+  z-index: 1;
+  right: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+

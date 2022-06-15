@@ -1,0 +1,106 @@
+.with-student {
+  text-align: center;
+}
+
+.with-student__header {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+
+.with-student__details {
+  margin: 0 0 20px 0;
+  padding: 0 !important;
+  font-size: 15px;
+}
+
+.with-student__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.with-student__toggle input[type="checkbox"] {
+  display: none;
+}
+
+.with-student__toggle .with-student__toggle--checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #bcbcbc;
+  background-color: transparent;
+  margin-right: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.with-student__toggle--text {
+  cursor: pointer;
+}
+
+.with-student__toggle .with-student__toggle--checkbox svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -6px;
+  margin-left: -6px;
+  width: 12px;
+  height: 12px;
+}
+
+.with-student__travel-bonus-toggle-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.with-student__travel-bonus-toggle-section span {
+  margin-left: 16px;
+}
+
+.with-student__travel-bonus-toggle {
+  height: 30px;
+}
+
+.with-student__travel-bonus-amount-section {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.with-student__travel-bonus-input {
+  height: 50px;
+  width: 80px;
+  border-radius: 8px;
+  border: 1px solid #3c3c3c;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #212529;
+}
+
+.with-student__travel-bonus-input-label {
+  position: absolute;
+  left: calc(50% + 114px);
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.with-student__travel-bonus-amount-section span {
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+}
+
+.with-student__travel-bonus-input-currency {
+  margin-left: 8px;
+  margin-right: 12px;
+  font-weight: bold;
+}

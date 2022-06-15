@@ -1,0 +1,64 @@
+.booking-address__title {
+  display: block;
+  font-size: 15px;
+  text-align: center;
+}
+
+.booking-address__description {
+  font-size: 14px;
+  text-align: center;
+}
+
+.booking-address__description b {
+  color: #5e5e5e;
+  cursor: pointer;
+}
+
+.booking-address__form-row {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+  }
+}
+
+html input.booking-address__form-input {
+  border: 0;
+  border-bottom: 1px solid #4ad9ca !important;
+  border-color: #5e5e5e !important;
+  height: 50px;
+  padding-bottom: 6px;
+  text-align: center;
+  outline: 0;
+  border-radius: 0 !important;
+}
+
+.booking-address__form-row .booking-address__form-input:first-of-type {
+  margin-right: 24px;
+}
+
+.booking-address__first-name, .booking-address__last-name {
+  width: calc(50% - 12px);
+}
+
+.booking-address__street {
+  width: calc(70% - 12px);
+}
+.booking-address__street2 {
+  width: 100%;
+}
+
+.booking-address__street-no {
+  width: calc(30% - 12px);
+}
+
+.booking-address__postcode {
+  width: calc(40% - 12px);
+}
+
+.booking-address__city {
+  width: calc(60% - 12px);
+}

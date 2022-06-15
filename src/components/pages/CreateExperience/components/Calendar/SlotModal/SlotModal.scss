@@ -1,0 +1,128 @@
+.slot-modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid #d6d5d5;
+  border-radius: 30px;
+  width: 280px;
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.slot-modal--title {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.slot-modal--duration {
+  display: flex;
+  justify-content: center;
+}
+
+.duration--start-time {
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+}
+
+.slot-modal--duration input[type="text"] {
+  width: 76px;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+
+.duration--end-time {
+  display: flex;
+  flex-direction: column;
+}
+
+.slot-modal--break-info {
+  margin-top: 14px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.slot-modal--break-duration {
+  display: flex;
+  justify-content: space-between;
+  width: 135px;
+  margin: 0 auto 16px auto;
+}
+
+.slot-modal--break-duration input[type="text"] {
+  width: 50px;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+
+.slot-modal--break-duration input[type="text"]::placeholder {
+  position: relative;
+  top: 1px;
+}
+
+.slot-modal button {
+  width: 200px;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  margin-bottom: 30px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 6px;
+  background-color: #4ad9ca;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.calendar .weiter-cta {
+  margin-top: 30px;
+}
+
+.slot-modal--frequency {
+  margin-left: 72px;
+  width: calc(100% - 72px);
+  margin-bottom: 16px;
+}
+
+.slot-modal--frequency .frequency__weekly, .slot-modal--frequency .frequency__biweekly  {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.slot-modal--frequency .frequency__weekly {
+  margin-bottom: 5px;
+}
+
+.slot-modal--frequency .weekly--radio, .slot-modal--frequency .biweekly--radio {
+  border: 2px solid #4ad9ca;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.slot-modal--frequency span {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.slot-modal--frequency .weekly--radio .selected, .slot-modal--frequency .biweekly--radio .selected {
+  width: 10px;
+  height: 10px;
+  background-color: #4ad9ca;
+  border-radius: 50%;
+}
+

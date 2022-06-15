@@ -1,0 +1,62 @@
+.mapPackage {
+  position: absolute;
+  top: -135px;
+  // left: -20px;
+  // right: 0;
+  z-index: 1000;
+}
+
+.iconPackage {
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.smallLoveButton {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px;
+  bottom: 10px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin-bottom: 2px;
+}
+
+.customMapController {
+  background: none rgb(255, 255, 255);
+  border: 0px;
+  margin: 10px;
+  padding: 0px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+  overflow: hidden;
+  // top: 42px;
+  // right: 0px;
+}
+
+.videoIcon {
+  position: absolute;
+  left: 35px;
+  top: 6px;
+}
+
+.mapImageIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}

@@ -1,0 +1,104 @@
+.booking-group-select__option {
+  border: 3px solid #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  height: 200px;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 8px;
+  cursor: pointer;
+  @media screen and (max-width: 767px) {
+    height: 175px;
+  }
+}
+
+.booking-group-select__option.booking-group-select--selected {
+  border: 3px solid #4ad9ca;
+}
+
+.booking-group-select__pricing {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.booking-group-select__marker {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #bcbcbc;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #bcbcbc;
+  font-weight: 500;
+  @media screen and (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.booking-group-select__marker--selected {
+  border: 3px solid #4ad9ca;
+  color: #4ad9ca;
+}
+
+.booking-group-select__title {
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.booking-group-select__info {
+  font-weight: normal;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.booking-group-select__image {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  @media screen and (max-width: 767px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.booking-group-select__price-unit--mobile {
+  font-size: 12px;
+  font-weight: normal;
+  position: relative;
+  top: -8px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+//.booking-group-select__image[data-order="2"] {
+//  right: 10px;
+//}
+//
+//.booking-group-select__image[data-order="3"] {
+//  right: 20px;
+//}
+//
+//.booking-group-select__image[data-order="4"] {
+//  right: 30px;
+//}
+//
+//.booking-group-select__image[data-order="5"] {
+//  right: 40px;
+//}

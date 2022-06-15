@@ -1,0 +1,66 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+html {
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 0.85rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 0.95rem;
+  }
+}
+$theme-colors: (
+  "primary": #4ad9ca,
+  "danger": #ff4136,
+  "secondary": #fc5d68,
+  "dark": #484848
+);
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80vw !important;
+  }
+}
+// @media (max-width: 575px) {
+//   .container {
+//     width: 90% !important;
+//   }
+// }
+
+.badge-outline-primary {
+  background: white;
+  color: #4ad9ca;
+  border: 2px solid #4ad9ca;
+}
+
+.badge-outline-secondary {
+  background: white;
+  color: #fc5d68;
+  border: 2px solid #fc5d68;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #4ad9ca !important;
+  background-color: #4ad9ca !important;
+}
+
+.btn-primary{
+  font-weight: bold !important;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";

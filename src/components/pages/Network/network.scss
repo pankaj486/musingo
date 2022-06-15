@@ -1,0 +1,74 @@
+.networkClass .networkFooter {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid black;
+  background: white;
+  @media only screen and (min-width: 1024px) {
+    display: none !important;
+  }
+}
+
+.posten-title {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+// .networkClass {
+//   background-image: url("../../../assets/images/networkBg.jpg");
+//   background-size: cover;
+//   min-height: 100vh;
+//   margin-top: -3vh;
+//   background-position: center;
+//   @media only screen and (max-width: 1024px) {
+//     margin-top: -5vh;
+//   }
+//   //   animation: chbg s infinite ease-in-out;;
+// }
+
+// .networkBg {
+//   animation: fadeIn 0.5s;
+// }
+
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+.post {
+  @media only screen and (max-width: 1024px) {
+    padding-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    max-width: 500px;
+  }
+}
+
+.postBox {
+  @media only screen and (max-width: 1024px) {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    max-width: 500px;
+  }
+}
+
+.gesuchButton {
+  position: absolute;
+  top: 15vh;
+  right: 1vh;
+  // @media only screen and (max-width: 1024px) {
+  //   top: 5vh;
+  // }
+}
+.netFolImage {
+  width: 25px !important;
+  height: 25px !important;
+}

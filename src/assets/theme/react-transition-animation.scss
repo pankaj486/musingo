@@ -1,0 +1,35 @@
+.fadeIn-enter {
+  opacity: 0.01;
+}
+
+.fadeIn-enter.fadeIn-enter-active {
+  opacity: 1;
+  transition: opacity 100ms ease-in;
+}
+
+.fadeIn-leave {
+  opacity: 1;
+}
+
+.fadeIn-leave.fadeIn-leave-active {
+  opacity: 0.01;
+  transition: opacity 100ms ease-in;
+}
+
+.fadeInLong-enter {
+  opacity: 0.01;
+}
+
+.fadeInLong-enter.fadeInLong-enter-active {
+  opacity: 1;
+  transition: opacity 2000ms linear;
+}
+
+.fadeInLong-leave {
+  opacity: 1;
+}
+
+.fadeInLong-leave.fadeInLong-leave-active {
+  opacity: 0.01;
+  transition: opacity 2000ms linear;
+}

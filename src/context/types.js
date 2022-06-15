@@ -1,0 +1,6 @@
+export const SET_FILTER_TYPE = 'SET_FILTER_TYPE';
+export const SET_FILTER_TYPES = 'SET_FILTER_TYPES';
+export const SET_KID_STATE = 'SET_KID_STATE';
+// export const HTTP_ERROR = 'FILTER_ERROR';
+// export const AUTH_LOGIN = 'AUTH_LOGIN';
+// export const SET_CURATED_CONTENT_URL = 'SET_CURATED_CONTENT_URL';

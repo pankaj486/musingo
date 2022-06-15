@@ -1,0 +1,84 @@
+.videoButton {
+  width: 160px;
+  // margin:  5px;
+  margin: auto;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  img {
+    width: 80px;
+  }
+  transition: all 0.25s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.videoContainer {
+  background: ghostwhite;
+  border-radius: 10px;
+  max-width: 500px;
+  max-height: 355px;
+  overflow: hidden;
+  position: relative;
+}
+.videoPlayerContainer {
+  position: relative;
+  video {
+    border-radius: 10px;
+    object-fit: initial;
+    width: 500px;
+    height: 355px;
+  }
+}
+
+.playerPlaceholder {
+  border-radius: 10px;
+  background: rgba($color: #000000, $alpha: 1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.placeholder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 200px;
+    height: 50px;
+    z-index: 100;
+  }
+}
+
+.videoHeader {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 1024px) {
+  .weiterButton {
+    position: fixed;
+    bottom: 0;
+  }
+}

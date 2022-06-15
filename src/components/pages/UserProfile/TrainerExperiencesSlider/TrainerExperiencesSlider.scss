@@ -1,0 +1,66 @@
+.trainer-experience-slider {
+  position: relative;
+  padding: 0 20px;
+  width: calc(100% - 40px);
+  margin: 40px auto 0 auto;
+}
+
+.trainer-experience-slider .bookingPackageTrainerExperience {
+  cursor: pointer;
+  padding: 5px;
+  border: 7px solid white;
+  border-radius: 30px;
+}
+
+.trainer-experience-slider .activePackage {
+  border: 7px solid #4ad9ca !important;
+}
+
+.experience-slider-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.trainer-experience-slider .swiper-button-prev {
+  left: -25px;
+  outline: 0;
+}
+
+.trainer-experience-slider .swiper-button-next {
+  right: -25px;
+  outline: 0;
+}
+
+.trainer-experience-slider .pricing {
+  font-size: 11px;
+}
+
+.trainer-experience-slider .pricing span {
+  font-size: 1.25rem;
+}
+
+.userProfileSlider {
+  border-color: #fff !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .trainer-experience-slider {
+    padding: 0;
+    width: 100%;
+  }
+
+  .trainerSlider {
+    max-width: 45vw;
+  }
+
+  .trainer-experience-slider .swiper-button-prev {
+    left: -15px;
+    outline: 0;
+  }
+
+  .trainer-experience-slider .swiper-button-next {
+    right: -15px;
+    outline: 0;
+  }
+}

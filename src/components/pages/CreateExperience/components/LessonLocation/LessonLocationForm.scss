@@ -1,0 +1,138 @@
+.classes__lesson-location {
+  text-align: center;
+}
+
+.lesson-location--header {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+
+.lesson-location--details {
+  margin: 0 0 16px 0;
+  padding: 0 !important;
+  font-size: 15px;
+}
+
+
+.lesson-location--google-map {
+  width: 800px;
+  height: 240px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.lesson-location--address-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  margin: 16px auto 0 auto;
+}
+
+.lesson-location--address-selector .dropdown {
+  width: 100%;
+}
+
+.lesson-location--address-selector .dropdown > button {
+  width: 100%;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  color: #484848 !important;
+}
+
+.lesson-location--address-selector .dropdown > button:after {
+  position: relative;
+  top: 1px;
+  margin-left: 8px;
+}
+
+.lesson-location--address-selector .dropdown .dropdown-menu {
+  width: 100%;
+}
+
+.lesson-location--address-selector > input {
+  width: 30%;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid;
+  text-align: center;
+  outline: none;
+  color: #484848;
+}
+
+.lesson-location-add-cta {
+  width: 11%;
+  height: 36px;
+  background-color: #4ad9ca;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.lesson-location-add-cta svg path {
+  fill: #fff;
+}
+
+.classes__lesson-location .location {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.lesson-location--locations {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.lesson-location--locations > p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-top: 16px;
+  text-align: left;
+}
+
+.lesson-location--locations span {
+  font-size: 14px;
+}
+
+.classes__lesson-location .location__title {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  width: 100px;
+}
+
+.classes__lesson-location .location__title i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #bcbcbc;
+}
+
+.classes__lesson-location .location__address {
+  width: 270px;
+  text-align: left;
+}
+
+.classes__lesson-location .location__cancel {
+  width: 24px;
+  height: 24px;
+  background: #bcbcbc;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.classes__lesson-location .weiter-cta {
+  margin-top: 30px;
+}

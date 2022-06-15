@@ -1,0 +1,164 @@
+.nav-search-input {
+  height: 40px !important;
+  border-radius: 100px !important;
+  border: 1px solid #d6d5d5 !important;
+  outline: none;
+  padding: 20px;
+  width: 70%;
+  margin-right: 20px;
+}
+
+.nav-btn {
+  background-color: #4ad9ca;
+  padding: 20px;
+  height: 40px;
+  border-radius: 30px;
+  outline: none;
+  color: #ffffff;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.activeNavLink {
+  border: 2px solid #4ad9ca;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+nav {
+  z-index: 1;
+}
+
+.placeInput {
+  width: 430px !important;
+  margin-right: auto;
+}
+
+.mobileMenu {
+  display: none;
+
+  .navbar-nav {
+    flex-direction: row !important;
+  }
+
+  @media screen and (max-width: 360px) {
+    font-size: 0.8rem;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.plus-popup {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #d2d2d2;
+  border-radius: 20px;
+  box-shadow: 10px 0 32px #f2f2f2;
+  position: absolute;
+
+  p {
+    border-bottom: 1px solid #d2d2d2;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .placeInput {
+    display: none !important;
+  }
+
+  .desktopMenu {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+
+  .activeNavLink {
+    padding: 0rem 0.5rem;
+
+    a {
+      color: #4ad9ca !important;
+    }
+  }
+}
+
+.activeInput {
+  border: 2px solid #929292 !important;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar .navbar-brand img {
+    width: 108px;
+  }
+
+  .navbar .navbar-nav li a {
+    padding: 6px 0;
+  }
+
+  .navbar .navbar-nav li.activeNavLink {
+    font-weight: 500 !important;
+  }
+}
+
+.searchBar {
+  padding-left: 30px !important;
+  width: 520px !important;
+  height: 60px !important;
+  border-radius: 100px !important;
+  border: solid 1px #5e5e5e !important;
+  margin-buttom: 20px;
+
+
+}
+
+.searchIcon {
+  position: absolute;
+  right: 11px;
+  top: 10px;
+  hight: 40px;
+  width: 40px;
+}
+
+.accountButton {
+  border: none;
+  outline: none;
+  border-radius: 50% !important;
+  background: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  filter: drop-shadow(-3px 5px 5px #9d9d9e);
+}
+
+.accountButtonContainer {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.accountDropdown {
+  border-radius: 20px !important;
+}
+
+.nav-brand-hide {
+  display: none !important;
+}
+
+.customNav {
+  border: none !important;
+}

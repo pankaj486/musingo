@@ -1,0 +1,41 @@
+.booking__phone-input-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.booking__phone-input-container .PhoneInputCountry {
+  border: 0;
+  border-bottom: 2px solid #4ad9ca;
+  height: 50px;
+  padding-bottom: 6px;
+  border-radius: 0;
+  margin-right: 24px;
+}
+
+.booking__phone-input-container .PhoneInputCountrySelectArrow {
+  width: 0.5em !important;
+  height: 0.5em !important;
+  border-bottom-width: 2px !important;
+  border-right-width: 2px !important;
+  opacity: 0.8 !important;
+  margin-top: -3px;
+  border-color: #bcbcbc;
+}
+
+.booking__phone-input-container .PhoneInputInput {
+  border: 0;
+  border-bottom: 2px solid #4ad9ca;
+  height: 50px;
+  padding-bottom: 6px;
+  text-align: left;
+  outline: 0;
+  border-radius: 0;
+  border-color: #4ad9ca !important;
+  width: calc(100% - 50px);
+  max-width: calc(100% - 50px);
+}
+
+.booking__phone-input-container .PhoneInput {
+  justify-content: space-between;
+}

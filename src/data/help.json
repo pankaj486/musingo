@@ -1,0 +1,30 @@
+[
+  {
+    "helpImg": "/image/image9.png",
+    "heading": "Help center",
+    "title": "um Musik zu machen",
+    "width":"70px",
+    "height":"3.4375rem"
+  },
+  {
+    "helpImg": "/image/image9.png",
+    "heading": "Host werden",
+    "title": "um Experiences anzubieten",
+    "width":"70px",
+    "height":"3.4375rem"
+  },
+  {
+    "helpImg": "/image/image10.png",
+    "heading": "Post in Feed",
+    "title": "über deine Experience",
+    "width":"50px",
+    "height":"2.4375rem"
+  },
+  {
+    "helpImg": "/image/image11.png",
+    "heading": "Freunde einladen",
+    "title": "Aus deinen Kontakten",
+    "width":"50px",
+    "height":"2.4375rem"
+  }
+]

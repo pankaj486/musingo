@@ -1,0 +1,42 @@
+.classes--experience-name {
+  text-align: center;
+}
+
+.classes--experience-name h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+
+.classes--experience-name p {
+  margin: 0 0 32px 0;
+  padding: 0 !important;
+  font-size: 15px;
+}
+
+.classes--experience-name input[type='text'] {
+  width: 555px;
+  height: 55px;
+  border-radius: 16px !important;
+  border-color: #a8a8a8 !important;
+  font-size: 18px;
+  margin: 0 auto 32px auto;
+}
+
+.classes--experience-name input[type='text']::placeholder {
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+@media only screen and (max-width:1024px){
+  .classes--experience-name{
+    max-width: 90vw;
+  }
+  .classes--experience-name input[type='text']{
+    width: 90vw;
+  }
+}

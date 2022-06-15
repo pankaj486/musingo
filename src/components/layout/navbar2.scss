@@ -1,0 +1,109 @@
+.nav-search-input {
+  height: 50px !important;
+  border-radius: 100px !important;
+  border: 1px solid #d6d5d5 !important;
+  outline: none;
+}
+
+.activeNavLink {
+  border: 2px solid #4ad9ca;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+nav {
+  z-index: 1;
+}
+.placeInput {
+  width: 600px !important;
+  margin-right: auto;
+}
+.mobileMenu {
+  display: none;
+  .navbar-nav {
+    flex-direction: row !important;
+  }
+  @media screen and (max-width: 360px) {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .placeInput {
+    display: none !important;
+  }
+  .desktopMenu {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+  }
+  .activeNavLink {
+    padding: 0rem 0.5rem;
+    a {
+      color: #4ad9ca !important;
+    }
+  }
+}
+
+.activeInput {
+  border: 2px solid #929292 !important;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar .navbar-brand img {
+    width: 108px;
+  }
+
+  .navbar .navbar-nav li a {
+    padding: 6px 0;
+  }
+
+  .navbar .navbar-nav li.activeNavLink {
+    font-weight: 500 !important;
+  }
+}
+
+.searchBar {
+  padding-left: 30px !important;
+  width: 600px !important;
+  height: 60px !important;
+  border-radius: 100px !important;
+  margin-bottom: 30px !important;
+}
+.searchIcon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  hight: 60px;
+  width: 60px;
+}
+.accountButton {
+  border: none;
+  outline: none;
+  border-radius: 50% !important;
+  background: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  filter: drop-shadow(-3px 5px 5px #9d9d9e);
+}
+
+.accountButtonContainer {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+}
+.accountDropdown {
+  border-radius: 20px !important;
+}
+
+.nav-brand-hide {
+  display: none !important;
+}
+
+.customNav {
+  border: block !important;
+}

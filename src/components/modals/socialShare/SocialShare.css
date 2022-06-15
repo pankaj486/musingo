@@ -1,0 +1,115 @@
+.social-share {
+  width: 22%;
+  min-width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #D6D5D5;
+  border-radius: 38px;
+  z-index: 2000;
+}
+
+.social-share-cancel-button {
+  position: absolute;
+  top: 16px;
+  left: 36px;
+  color: #bcbcbc;
+  font-size: 22px;
+  font-weight: normal;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.social-share-cancel-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.teilen-heading {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 36px;
+  margin-bottom: 0;
+
+}
+
+.social-app-list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 16px auto;
+}
+
+a.social-app {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0 20px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.social-app:hover {
+  text-decoration: none;
+}
+
+.social-app-divider {
+  height: 1px;
+  background-color: #ededed;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.social-app span {
+  line-height: 1;
+  color: #999999;
+  font-weight: bold;
+  font-size: 17px;
+  margin-left: 20px;
+  position: relative;
+  top: 1px;
+}
+
+.social-app-icon-container {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-app-icon-container svg {
+  color: #fff;
+}
+
+.social-app-icon-container.tumblr svg {
+  width: 12px;
+  height: 12px;
+}
+
+.social-app-icon-container.facebook {
+  background-color: #3b5998;
+}
+
+.social-app-icon-container.twitter {
+  background-color: #00acee;
+}
+
+.social-app-icon-container.whatsapp {
+  background-color: #4FCE5D;
+}
+
+.social-app-icon-container.messenger {
+  background-color: #0084FF;
+}
+
+.social-app-icon-container.email {
+  background-color: #bab9b9;
+}
+
+.social-app-icon-container.tumblr {
+  background-color: #34526f;
+}

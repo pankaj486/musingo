@@ -1,0 +1,43 @@
+.booking-location__option {
+  border: 4px solid #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  height: 200px;
+  margin: 10px;
+  border-radius: 36px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.booking-location__option.booking-location--selected {
+  border: 4px solid #4ad9ca;
+}
+
+.booking-location__image {
+  width: 60px;
+  height: auto;
+}
+
+.booking-location__pricing {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+}
+
+.booking-location__title {
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.booking-location__info {
+  font-weight: normal;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+}

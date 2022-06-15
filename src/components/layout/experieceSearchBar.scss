@@ -1,0 +1,189 @@
+.mainFilter {
+  position: relative;
+  &:hover {
+    ::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      width: 90%;
+      height: 6px;
+      background: #4ad9ca;
+      left: 50%;
+      transform: translateX(-50%);
+      right: 0;
+    }
+  }
+}
+
+.topBar {
+  p {
+    margin: 20px;
+    padding-bottom: 0;
+    @media screen and (max-width: 575px) {
+      margin: 5px;
+      margin-bottom: 10px;
+    }
+  }
+  .barActive {
+    border-bottom: 2px solid #4ad9ca;
+    font-weight: 900;
+  }
+}
+
+.wrapper-input {
+  position: relative;
+  display: flex;
+  border: 1px solid #d5d5d5;
+  padding: 10px 20px;
+  flex-direction: row;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 575px) {
+    padding: 10px;
+  }
+  .inputs {
+    border: none !important;
+    font-size: 14px;
+    font-style: italic;
+    border-right: 1px solid #d5d5d5 !important;
+    @media screen and (max-width: 575px) {
+      font-size: 12px;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+  .drop {
+    font-size: 14px;
+    width: 150px;
+    color: #484848 !important;
+    font-style: italic;
+    border-color: white !important;
+    @media screen and (max-width: 575px) {
+      font-size: 12px;
+    }
+    &:focus {
+      outline: none !important;
+    }
+    .css-1s2u09g-control{
+      border-style: none !important;
+    }
+  }
+}
+.wrapper-inputs {
+  position: relative;
+  display: flex;
+  border: 1px solid #d5d5d5;
+  padding: 10px 20px;
+  flex-direction: row;
+  border-radius: 50px;
+  align-items: center;
+  width: 450px;
+  justify-content: space-between;
+  .inputs {
+    border: none !important;
+    font-size: 14px;
+    font-style: italic;
+    @media screen and (max-width: 575px) {
+      font-size: 12px;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+}
+.expo {
+  display: flex;
+  align-items: center;
+  background-color: #4ad9ca;
+  border-radius: 30px;
+  padding: 5px;
+  padding-right: 15px;
+  p {
+    font-size: 14px;
+    font-weight: 900;
+    padding-bottom: 0;
+    color: white;
+    margin-bottom: 0;
+    @media screen and (max-width: 575px) {
+      font-size: 12px;
+    }
+  }
+}
+.expos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  background-color: #4ad9ca;
+  border-radius: 30px;
+  padding: 5px;
+  padding-right: 15px;
+  @media screen and (max-width: 768px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 575px) {
+    width: 100%;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 900;
+    padding-bottom: 0;
+    color: white;
+    margin-bottom: 0;
+    @media screen and (max-width: 575px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.searchOverlay {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.searchModal {
+  position: fixed;
+  background: white;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 40px 40px;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .searchModal {
+    border-radius: 0;
+    height: 100vh;
+  }
+}
+
+.searchBarOverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  border-radius: 100px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.1s;
+  border: 1px solid #d5d5d5 !important;
+  box-shadow: 4px 4px 6px rgba($color: #000000, $alpha: 0.11) !important;
+
+  &:hover {
+    box-shadow: 0 2px 3px;
+  }
+}
