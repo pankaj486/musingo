@@ -38,6 +38,7 @@ import { builder } from "@builder.io/react";
 import { SignupModal } from "../SignupModal/SignupModal";
 import { Input } from "@material-ui/core";
 import ExperieceSearchBar from "./experieceSearchBar";
+import {useUserMeProfileRetrieve} from "src/generated/apiFetchers";
 
 builder.init(process.env.REACT_APP_BUILDER_API_KEY);
 
@@ -48,6 +49,8 @@ const MusingooNavbar = (props) => {
   const [filterState, setFilterStatestate] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+
+  const { data: getUserProfile } = useUserMeProfileRetrieve({});
 
   const history = useHistory();
 
@@ -76,7 +79,7 @@ const MusingooNavbar = (props) => {
     setSignupModal(!signupModal);
   };
 
-  const isLoggedIn = localStorage.getItem("current_user");
+  const currentUser = localStorage.getItem("current_user");
 
   // state for login modal
   const [loginModal, setLoginModal] = useState(false);
@@ -88,8 +91,11 @@ const MusingooNavbar = (props) => {
   };
 
   // state for user
-  const currentUser = useLoginState();
+  // const currentUser = useLoginState();
   //const currentProfile = useProfileState({ user_id: "me" });
+
+
+
 
   const toggleLoginModalFromRegisterModal = (e) => {
     e.preventDefault();
@@ -121,19 +127,19 @@ const MusingooNavbar = (props) => {
     toggleLoginModal(e);
   };
 
-  const getUser = () => {
-    service.get_user_profile().then((response) => {
-      setUserProfile(response.data.avatar)
-    })
-  }
+  // const getUser = () => {
+  //   service.get_user_profile().then((response) => {
+  //     setUserProfile(response.data.avatar)
+  //   })
+  // }
 
   const redirection = (url) => {
     history.push(`${url}`)
   }
 
-  useEffect(() => {
-    getUser();
-  },[isLoggedIn])
+  // useEffect(() => {
+  //   getUser();
+  // },[currentUser])
 
   return (
     <div>
@@ -281,13 +287,13 @@ const MusingooNavbar = (props) => {
                           {/* <DropdownToggle className="accountButtonContainer"> */}
                           {currentUser && <button className="accountButton">
                             <img onClick={() => setDropdownOpen(!dropdownOpen)}
-                              src={isLoggedIn ? userProfile : AccountIcon}
+                              src={getUserProfile?.avatar ? getUserProfile?.avatar : AccountIcon}
                               style={{
-                                borderRadius: isLoggedIn ? "50%" : "",
+                                borderRadius: currentUser ? "50%" : "",
                               }}
                               alt="account"
-                              width={isLoggedIn ? "45px" : "35px"}
-                              height={isLoggedIn ? "44px" : "0"}
+                              width={currentUser ? "45px" : "35px"}
+                              height={currentUser ? "44px" : "0"}
                             />
                           </button>}
                          {dropdownOpen && <div className="comunity-modal">
@@ -326,7 +332,7 @@ const MusingooNavbar = (props) => {
                             </div>
                           }
                           {/* </DropdownToggle>
-                            {isLoggedIn && (
+                            {currentUser && (
                               <DropdownMenu className="px-4 py-4 mr-5 accountDropdown">
                                 <div className="d-flex justify-content-end">
                                   <img src={Chat} alt="chat" width="25px" />
@@ -431,7 +437,7 @@ const MusingooNavbar = (props) => {
                                 </div>
                               </DropdownMenu>
                             )} */}
-                          {!isLoggedIn && (
+                          {!currentUser && (
                             <DropdownMenu>
                               <NavItem className="mr-sm-5 pr-sm-4">
                                 <NavLink
